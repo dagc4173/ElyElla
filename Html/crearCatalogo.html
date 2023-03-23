@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Crear catálogo - Catálogos El y Ella</title>
+      <link rel="icon" href="../Imagenes/Logo1.png">
+      <link rel="stylesheet" href="../Css/style.css">
+      <script src="script.js"></script>
+	  </head>
+  <body>
+    <header>
+        <div class="header-container" id="Logo">
+            <img src="../Imagenes/Logo2.png" alt="Logo"/>
+            <h1>Crear catálogo</h1>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="crearProducto.html">Crear producto</a></li>
+                <li><a href="crearPlantilla.html">Crear plantilla de catálogo</a></li>
+                <li><a href="crearCatalogo.html">Crear catálogo</a></li>
+                <li><a href="ingresar.html">Ingresar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+      <form id="formulario-plantilla">
+        <h2>Seleccione una plantilla:</h2>
+        <label for="plantilla1">
+          <input type="radio" id="plantilla1" name="plantilla" value="1">
+          Plantilla 1
+        </label>
+        <label for="plantilla2">
+          <input type="radio" id="plantilla2" name="plantilla" value="2">
+          Plantilla 2
+        </label>
+        <label for="plantilla3">
+          <input type="radio" id="plantilla3" name="plantilla" value="3">
+          Plantilla 3
+        </label>
+      </form>
+      <form id="formulario-productos">
+        <h2>Seleccione la cantidad de productos:</h2>
+        <label for="todos">
+          <input type="radio" id="todos" name="cantidad-productos" value="todos">
+          Todos los productos
+        </label>
+        <label for="definidos">
+          <input type="radio" id="definidos" name="cantidad-productos" value="definidos">
+          Definir los productos
+        </label>
+        <div id="opciones-productos">
+          <label for="cantidad">
+            Cantidad:
+            <input type="number" id="cantidad" name="cantidad" min="1" max="10">
+          </label>
+          <label for="productos">
+            Productos:
+            <select id="productos" name="productos" multiple>
+              <option value="1">Producto 1</option>
+              <option value="2">Producto 2</option>
+              <option value="3">Producto 3</option>
+              <option value="4">Producto 4</option>
+              <option value="5">Producto 5</option>
+            </select>
+          </label>
+          <label for="sku">
+            SKU:
+            <input type="text" id="sku" name="sku">
+          </label>
+          <button type="button" id="agregar-producto">Agregar Producto</button>
+        </div>
+        <button type="button" id="guardar-catalogo">Guardar Catálogo</button>
+        <button type="button" id="generar-catalogo">Generar Catálogo</button>
+      </form>
+    </main>
+  </body>
+</html>
