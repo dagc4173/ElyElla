@@ -1,3 +1,6 @@
+function main() {
+  
+}
 // Variables para la tabla de productos
 const tablaProductos = document.querySelector('#tabla-productos tbody');
 const botonEditar = document.querySelectorAll('.boton-editar');
@@ -117,3 +120,4 @@ function guardarProductoNuevo() {
 };
 xhr.send(formData);
 }
+window.onload = main;
