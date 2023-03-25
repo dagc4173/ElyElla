@@ -55,16 +55,127 @@ body {
     color: #fff;
     text-decoration: none;
   }
+
+  /* Estilos del main */
   
-  main {
+main {
     margin: 40px;
-  }
-  
-  footer {
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.parrafos{
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  font-size: 18px;
+  line-height: 1.5;
+
+
+}
+
+#pa p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.comments {
+  margin-top: 20px;
+  padding: 5%;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.comments ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comments li {
+  margin: 5px 0;
+}
+
+.comments a {
+  color: #222;
+  background-color: #ddd;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.comments a:hover {
+  background-color: #aaa;
+  color: #fff;
+}
+
+main .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    list-style: none;
+}
+
+main .social-icons li {
+    margin: 8px;
+}
+
+
+main .social-icons .social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 25%;
+    width: 100%;
+}
+
+main .social-icons .social-icon img {
+    width: 30px;
+}
+
+main .social-icons #Facebook {
+    background: white;
+    border: 2px solid #3b5998;
+}
+
+main .social-icons #Whatsapp {
+    background: white;
+    border: 2px solid #128C7E;
+}
+
+main .social-icons #GitHub {
+    background: rgb(255, 255, 255);
+    border: 2px solid #23272d;
+}
+
+main .social-icons #Twitter {
+    background: white;
+    border: 2px solid #00acee;
+}
+
+main .social-icons #LinkedIn {
+    background: white;
+    border: 2px solid #0077b0;
+}
+
+/* Estilos del footer*/
+footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px;
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
   }
 
  
