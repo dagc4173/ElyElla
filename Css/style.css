@@ -1,62 +1,66 @@
+/* Configuracion Global */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #4A4A4A;
+  color: #fff;
+}
+
+/* Estilos del header*/
+header {
+  position: relative;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-weight: bold;
+}
+
+#Logo img {
+  width: 80px;
+  padding: 2px;
+  border-radius: 15%;
+  border: 2px solid rgb(255, 255, 255);
+  display: flex;
+}
   
-  }
-  
-  header {
-    position: relative;
-    background-color: #333;
-    color: #fff;
+header .header-container h1 {
+  margin: 20px;
+}
+
+header .header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-  }
-
-  #Logo img {
-    width: 80px;
-    padding: 2px;
-    border-radius: 15%;
-    border: 2px solid rgb(255, 255, 255);
-    display: flex;
-  }
+}
   
-  header .header-container h1 {
-    margin: 20px;
-  }
-
-  header .header-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px;
-  }
-
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+nav li {
+  margin-right: 20px;
+}
   
-  nav li {
-    margin-right: 20px;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-  }
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
 
-  /* Estilos del main */
+/* Estilos del main */
   
 main {
     margin: 40px;
@@ -66,14 +70,16 @@ h1 {
   margin-bottom: 30px;
 }
 
+h2 {
+  text-align: center;
+}
+
 .parrafos{
   max-width: 800px;
   margin: auto;
   padding: 30px;
   font-size: 18px;
   line-height: 1.5;
-
-
 }
 
 #pa p {
@@ -85,11 +91,20 @@ h1 {
 .comments {
   margin-top: 20px;
   padding: 5%;
+  text-align: center;
+}
+
+.comments ul {
+  list-style-position: inside;
+}
+
+.comments li {
+  margin-bottom: 10px;
 }
 
 h3 {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .comments ul {
@@ -103,23 +118,32 @@ h3 {
 }
 
 .comments a {
-  color: #222;
-  background-color: #ddd;
+  color: #000000;
+  background-color: #fff;
   padding: 5px 10px;
   border-radius: 10px;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .comments a:hover {
-  background-color: #aaa;
+  background-color: #fff;
   color: #fff;
 }
 
+#cont a {
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #4a6683;
+  color: #fff;
+}
+
+
 main .social-icons {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  list-style: none;
 }
 
 main .social-icons li {
@@ -128,55 +152,56 @@ main .social-icons li {
 
 
 main .social-icons .social-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    border-radius: 25%;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 25%;
+  width: 100%;
 }
 
 main .social-icons .social-icon img {
-    width: 30px;
+  width: 30px;
 }
 
 main .social-icons #Facebook {
-    background: white;
-    border: 2px solid #3b5998;
+  background: white;
+  border: 2px solid #3b5998;
 }
 
 main .social-icons #Whatsapp {
-    background: white;
-    border: 2px solid #128C7E;
+  background: white;
+  border: 2px solid #128C7E;
 }
 
 main .social-icons #GitHub {
-    background: rgb(255, 255, 255);
-    border: 2px solid #23272d;
+  background: rgb(255, 255, 255);
+  border: 2px solid #23272d;
 }
 
 main .social-icons #Twitter {
-    background: white;
-    border: 2px solid #00acee;
+  background: white;
+  border: 2px solid #00acee;
 }
 
 main .social-icons #LinkedIn {
-    background: white;
-    border: 2px solid #0077b0;
+  background: white;
+  border: 2px solid #0077b0;
 }
+
 
 /* Estilos del footer*/
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
 
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-  }
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
 
  
 

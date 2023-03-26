@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Ingresar - Catálogos El y Ella</title>
 		<link rel="icon" href="../Imagenes/Logo1.png">
-		<link rel="stylesheet" href="../Css/style.css">
+		<link rel="stylesheet" href="../Css/ingresar.css">
 	</head>
     <body>
         <header>
@@ -19,9 +19,8 @@
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
                     <li><a href="crearProducto.html">Crear producto</a></li>
-                    <li><a href="crearPlantilla.html">Crear plantilla de catálogo</a></li>
-                    <li><a href="#">Crear catálogo</a></li>
-                    <li><a href="ingresar.html">Ingresar</a></li>
+                    <li><a href="crearPlantilla.html">Crear plantilla</a></li>
+                    <li><a href="crearCatalogo.html">Crear catálogo</a></li>
                 </ul>
             </nav>
         </header>
@@ -29,10 +28,14 @@
             <section>
                 <h2>Ingresar</h2>
                 <form>
-                    <label for="usuario">Usuario:</label>
-                    <input type="text" id="usuario" name="usuario">
-                    <label for="contraseña">Contraseña:</label>
-                    <input type="password" id="contraseña" name="contraseña">
+                    <div>
+                        <label for="usuario">Usuario:</label>
+                        <input type="text" id="usuario" name="usuario">
+                    </div>
+                    <div>
+                        <label for="contraseña">Contraseña:</label>
+                        <input type="password" id="contraseña" name="contraseña">
+                    </div>
                     <button type="submit">Ingresar</button>
                 </form>
                 <p>¿No tienes una cuenta? <a href="registrarse.html">Regístrate</a></p>
