@@ -1,6 +1,7 @@
 $(document).ready(() => {
     $("menu-principal").load("Components/menu-principal.html");
     $("redes-sociales").load("Components/redes-sociales.html");
+    $("mifooter").load("Components/footer.html")
     $("#btnCargar").click(ClickBtnCargar);
     $("#enviarFrm").click((event) => {
         event.preventDefault();
