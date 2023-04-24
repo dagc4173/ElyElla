@@ -1,7 +1,8 @@
 $(document).ready(() => {
-    $("menu-principal").load("Components/menu-principal.html");
-    $("redes-sociales").load("Components/redes-sociales.html");
-    $("mifooter").load("Components/footer.html")
+    $("menu-principal").load("../Components/menu-principal.html");
+    $("redes-sociales").load("../Components/redes-sociales.html");
+    $("mifooter").load("../Components/footer.html")
+    $("menu-vertical").load("../Components/menu-vertical.html")
     $("#btnCargar").click(ClickBtnCargar);
     $("#enviarFrm").click((event) => {
         event.preventDefault();
