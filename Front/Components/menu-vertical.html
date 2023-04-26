@@ -1,66 +1,342 @@
-<ul class="nav flex-column">
-    <div class="container-fluid">
-        <a class="navbar-brand mx-3" href="../index.html">
-            <img src="../Imagenes/Logo2.png" alt="Logo" width="60" height="60"
-                class="d-inline-block align-text-justify bg-light p-1 rounded">
-            <h1 class="d-inline-block align-text-justify fw-bold">Eróticos</h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Dropdown
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Menu</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                        <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1 </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
+                    </li>
+                    <li>
+                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
+                    </li>
+                </ul>
+                <hr>
+                <div class="dropdown pb-4">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                        <span class="d-none d-sm-inline mx-1">loser</span>
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
                     </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                </li>
-            </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col py-3">
+            Content area...
         </div>
     </div>
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled">Disabled</a>
-    </li>
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Dropdown
-        </a>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li>
-                <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-    </li>
-  </ul>
+</div>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-    
-</nav>
+
+<ul class="navbar-nav ml-auto text-center mr-xl-5">
+    <li class="nav-item active mr-lg-2 mb-lg-0 mb-2">
+        <a class="nav-link" href="index.html">Home
+            <span class="sr-only">(current)</span>
+        </a>
+    </li>
+    <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Electronics
+        </a>
+        <div class="dropdown-menu">
+            <div class="agile_inner_drop_nav_info p-4">
+                <h5 class="mb-3">Mobiles, Computers</h5>
+                <div class="row">
+                    <div class="col-sm-6 multi-gd-img">
+                        <ul class="multi-column-dropdown">
+                            <li>
+                                <a href="product.html">All Mobile Phones</a>
+                            </li>
+                            <li>
+                                <a href="product.html">All Mobile Accessories</a>
+                            </li>
+                            <li>
+                                <a href="product.html">Cases &amp; Covers</a>
+                            </li>
+                            <li>
+                                <a href="product.html">Screen Protectors</a>
+                            </li>
+                            <li>
+                                <a href="product.html">Power Banks</a>
+                            </li>
+                            <li>
+                                <a href="product.html">All Certified Refurbished</a>
+                            </li>
+                            <li>
+                                <a href="product.html">Tablets</a>
+                            </li>
+                            <li>
+                                <a href="product.html">Wearable Devices</a>
+                            </li>
+                            <li>
+                                <a href="product.html">Smart Home</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 multi-gd-img">
+                        <ul class="multi-column-dropdown">
+                            <li>
+                                <a href="product.html">Laptops</a>
+                            </li>
+                            <li>
+                                <a href="product.html">Drives &amp; Storage</a>
+                            </li>
+                            <li>
+                                <a href="product.html">Printers &amp; Ink</a>
+                            </li>
+                            <li>
+                                <a href="product.html">Networking Devices</a>
+                            </li>
+                            <li>
+                                <a href="product.html">Computer Accessories</a>
+                            </li>
+                            <li>
+                                <a href="product.html">Game Zone</a>
+                            </li>
+                            <li>
+                                <a href="product.html">Software</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Appliances
+        </a>
+        <div class="dropdown-menu" style="display: none;">
+            <div class="agile_inner_drop_nav_info p-4">
+                <h5 class="mb-3">TV, Appliances, Electronics</h5>
+                <div class="row">
+                    <div class="col-sm-6 multi-gd-img">
+                        <ul class="multi-column-dropdown">
+                            <li>
+                                <a href="product2.html">Televisions</a>
+                            </li>
+                            <li>
+                                <a href="product2.html">Home Entertainment Systems</a>
+                            </li>
+                            <li>
+                                <a href="product2.html">Headphones</a>
+                            </li>
+                            <li>
+                                <a href="product2.html">Speakers</a>
+                            </li>
+                            <li>
+                                <a href="product2.html">MP3, Media Players &amp; Accessories</a>
+                            </li>
+                            <li>
+                                <a href="product2.html">Audio &amp; Video Accessories</a>
+                            </li>
+                            <li>
+                                <a href="product2.html">Cameras</a>
+                            </li>
+                            <li>
+                                <a href="product2.html">DSLR Cameras</a>
+                            </li>
+                            <li>
+                                <a href="product2.html">Camera Accessories</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 multi-gd-img">
+                        <ul class="multi-column-dropdown">
+                            <li>
+                                <a href="product2.html">Musical Instruments</a>
+                            </li>
+                            <li>
+                                <a href="product2.html">Gaming Consoles</a>
+                            </li>
+                            <li>
+                                <a href="product2.html">All Electronics</a>
+                            </li>
+                            <li>
+                                <a href="product2.html">Air Conditioners</a>
+                            </li>
+                            <li>
+                                <a href="product2.html">Refrigerators</a>
+                            </li>
+                            <li>
+                                <a href="product2.html">Washing Machines</a>
+                            </li>
+                            <li>
+                                <a href="product2.html">Kitchen &amp; Home Appliances</a>
+                            </li>
+                            <li>
+                                <a href="product2.html">Heating &amp; Cooling Appliances</a>
+                            </li>
+                            <li>
+                                <a href="product2.html">All Appliances</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
+        <a class="nav-link" href="about.html">About Us</a>
+    </li>
+    <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
+        <a class="nav-link" href="product.html">New Arrivals</a>
+    </li>
+    <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Pages
+        </a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="product.html">Product 1</a>
+            <a class="dropdown-item" href="product2.html">Product 2</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="single.html">Single Product 1</a>
+            <a class="dropdown-item" href="single2.html">Single Product 2</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="checkout.html">Checkout Page</a>
+            <a class="dropdown-item" href="payment.html">Payment Page</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="contact.html">Contact Us</a>
+    </li>
+</ul>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <!-- Indicators-->
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class=""></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3" class=""></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item item1">
+            <div class="container">
+                <div class="w3l-space-banner">
+                    <div class="carousel-caption p-lg-5 p-sm-4 p-3">
+                        <p>Get flat
+                            <span>10%</span> Cashback</p>
+                        <h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">The
+                            <span>Big</span>
+                            Sale
+                        </h3>
+                        <a class="button2" href="product.html">Shop Now </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item item2 active">
+            <div class="container">
+                <div class="w3l-space-banner">
+                    <div class="carousel-caption p-lg-5 p-sm-4 p-3">
+                        <p>advanced
+                            <span>Wireless</span> earbuds</p>
+                        <h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">Best
+                            <span>Headphone</span>
+                        </h3>
+                        <a class="button2" href="product.html">Shop Now </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item item3">
+            <div class="container">
+                <div class="w3l-space-banner">
+                    <div class="carousel-caption p-lg-5 p-sm-4 p-3">
+                        <p>Get flat
+                            <span>10%</span> Cashback</p>
+                        <h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">New
+                            <span>Standard</span>
+                        </h3>
+                        <a class="button2" href="product.html">Shop Now </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item item4">
+            <div class="container">
+                <div class="w3l-space-banner">
+                    <div class="carousel-caption p-lg-5 p-sm-4 p-3">
+                        <p>Get Now
+                            <span>40%</span> Discount</p>
+                        <h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">Today
+                            <span>Discount</span>
+                        </h3>
+                        <a class="button2" href="product.html">Shop Now </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
