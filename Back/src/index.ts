@@ -1,18 +1,11 @@
 import express from 'express';
+import personaRouter from './routes/perosna.rourer'
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
-
-app.get("/",(req:express.Request, res:express.Response)=> {
-    res.send("Esta es la respuesta desde la api por get")
-});
-
-app.post("/",(req:express.Request, res:express.Response)=> {
-    console.log(req.body);
-    res.send("Esta es la respuesta desde la api por get")
-});
+app.use('/api/persona', personaRouter);
 
 app.listen(port, ()=>{
     console.log(`El servidor esta escuchando el puerto ${port}`)
