@@ -17,38 +17,65 @@
     <!--<link rel="stylesheet" href="Css/style.css">-->
 </head>
 
-<body>
+<body class="bg-dark">
     <header>
-        <menu-principal></menu-principal>
+        <mimenu></mimenu>
     </header>
 
-    <main>
-        <form action="https://testapi.omarcardona.com/" method="post"><br><br>
+    
 
-            <input type="text" id="nombre" name="nombre" required placeholder="Nombre"><br><br>
-
-            <input type="email" id="correo" name="correo" required placeholder="email"><br><br>
-
-            <textarea id="comentarios" name="comentarios" required placeholder="Ingrese un comentario..." rows="4"
-                cols="50"></textarea><br><br>
-
-            <select id="nombre-destino" name="nombre-destino" required>
-                <option value="">Elige una opcion</option>
-                <option value="opcion1">Excelente</option>
-                <option value="opcion2">Buena</option>
-                <option value="opcion3">Regula</option>
-                <option value="opcion4">Mala</option>
-            </select><br><br>
-
-            <input type="tel" id="telefono" name="telefono" required placeholder="Telefono"><br><br>
-
-            <input type="datetime-local" id="fecha_hora" name="fecha_hora" required placeholder="Fecha y Hora"><br><br>
-            <div>
-                <input type="submit" value="Enviar">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <h2 class="text-light">Sugerencias y opiniones</h2>
+                <div class="container">
+                    <form action="https://testapi.omarcardona.com/" method="post">
+                        <div class="form-group mb-3">
+                            <label class="text-light" for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Nombre" class="form-control">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="text-light" for="correo">Correo electrónico</label>
+                            <input type="email" id="correo" name="correo" required placeholder="Correo electrónico"
+                                class="form-control">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="text-light" for="comentarios">Comentarios</label>
+                            <textarea id="comentarios" name="comentarios" required placeholder="Ingrese un comentario..." rows="4"
+                                cols="50" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="text-light" for="nombre-destino">Valoración</label>
+                            <select id="nombre-destino" name="nombre-destino" required class="form-control">
+                                <option value="">Elige una opción</option>
+                                <option value="opcion1">Excelente</option>
+                                <option value="opcion2">Buena</option>
+                                <option value="opcion3">Regular</option>
+                                <option value="opcion4">Mala</option>
+                            </select>
+                        </div>
+            
+                        <div class="form-group mb-3">
+                            <label class="text-light" for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" required placeholder="Teléfono" class="form-control">
+                        </div>
+            
+                        <div class="form-group mb-3">
+                            <label class="text-light" for="fecha_hora">Fecha y Hora</label>
+                            <input type="datetime-local" id="fecha_hora" name="fecha_hora" required placeholder="Fecha y Hora"
+                                class="form-control">
+                        </div>
+            
+                        <div class="form-group mb-3">
+                            <input type="submit" value="Enviar" class="btn btn-danger">
+                        </div>
+                    </form>
+                </div>
             </div>
-        </form>
-    </main>
-    <footer>
+        </div>
+    </div>
+
+    <footer >
         <mifooter></mifooter>
     </footer>
 </body>

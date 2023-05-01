@@ -1,8 +1,11 @@
 $(document).ready(() => {
-    $("menu-principal").load("../Components/menu-principal.html");
+    $("mimenu").load("../Components/mimenu.html");
+    $("menu-principal").load("./Components/menu-principal.html");
     $("redes-sociales").load("../Components/redes-sociales.html");
     $("mifooter").load("../Components/footer.html")
-    $("menu-vertical").load("../Components/menu-vertical.html")
+    $("footer-principal").load("./Components/footer-principal.html")
+
+
     $("#btnCargar").click(ClickBtnCargar);
     $("#enviarFrm").click((event) => {
         event.preventDefault();
@@ -15,10 +18,29 @@ $(document).ready(() => {
         $.post("https://dummyjson.com/products/add", p,
             (rs) => {
                 console.log(rs);
-             })
+            })
     })
 });
 
+//ingreso y registro
+$(document).ready(() => {
+    $("ingreso").load("./Components/ingreso.html");
+    $("registro").load("./Components/registro.html");
+    $("ingreso").load("../Components/ingreso.html");
+    $("registro").load("../Components/registro.html");
+    // Selecciona el botón
+    var registroBtn = $('#registro-btn');
+
+    // Añade un evento click al botón
+    registroBtn.click(() => {
+        // Muestra el offcanvas
+        $('#offcanvasRight').offcanvas('show');
+
+        // Llama al componente
+        var registroComponent = $('<registro></registro>');
+        $('#offcanvasRight .offcanvas-body').html(registroComponent);
+    });
+});
 
 function ClickBtnCargar() {
     $.get("https://dummyjson.com/products", (rs) => {
@@ -34,14 +56,14 @@ function ClickBtnCargar() {
     });
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
     $(".dropdown").hover(
-        function() {
-            $('.dropdown-menu', this).stop(true,true).slideDown("fast");
+        function () {
+            $('.dropdown-menu', this).stop(true, true).slideDown("fast");
             $(this).toggleClass('open');
         },
-        function() {
-            $('.dropdown-menu', this).stop(true,true).slideUp("fast");
+        function () {
+            $('.dropdown-menu', this).stop(true, true).slideUp("fast");
             $(this).toggleClass('open');
         }
     );

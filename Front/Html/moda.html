@@ -2,43 +2,207 @@
 <html lang="es">
 
 <head>
-	
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-		crossorigin="anonymous"></script>
-	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-	<script src="../JS/funciones.js" defer></script>
-	<title>El y Ella Moda</title>
-	<link rel="icon" href="../Imagenes/Logo1.png">
-	<!--<link rel="stylesheet" href="Css/style.css">-->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../JS/funciones.js" defer></script>
+    <title>El y Ella Moda</title>
+    <link rel="icon" href="../Imagenes/Logo1.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 </head>
 
-<body>
-	<header>
-		<menu-principal></menu-principal>
-	</header>
+<body class="bg-dark">
+    <header>
+        <mimenu></mimenu>
+    </header>
 
-	<main>
-		<h2>Titulo</h2>
-		<div class="parrafos" id="pa">
-			<p>Info</p>
-			<p>Info</p>
-			<p>Info</p>
-			<p>Info</p>
-		</div>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md- col-xl-2.5 px-sm-2 px-0 bg-dark ">
+                <div
+                    class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100 ">
+                    <a href="#"
+                        class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 d-none d-sm-inline">
+                            <h2>Moda</h2>
+                        </span>
+                    </a>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+                        id="menu">
+                        <li class="nav-item">
+                            <h5><a href="#" class="nav-link align-middle btn btn-light text-success">
+                                    <i class="bi bi-command"></i> <span class="ms-1 d-none d-sm-inline">Lociones y
+                                        <br> fragancias</span>
+                                </a></h5>
+                        </li>
+                        <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
+                            <h5><a class="nav-link dropdown-toggle btn btn-light text-success" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bi bi-universal-access"></i> <span
+                                        class="ms-1 d-none d-sm-inline">Él</span>
+                                </a></h5>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Camisas</a>
+                                <a class="dropdown-item" href="#">Camisetas</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Chaquetas</a>
+                                <a class="dropdown-item" href="#">Jeans</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Ropa interior</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
+                            <h5><a class="nav-link dropdown-toggle btn btn-light text-success" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bi bi-bag-heart-fill"></i> <span
+                                        class="ms-1 d-none d-sm-inline">Ella</span>
+                                </a></h5>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#">Blusas</a>
+                                <a class="dropdown-item" href="#">Jeans</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Chaquetas</a>
+                                <a class="dropdown-item" href="#">Vestidos</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Ropa interior</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+            <div class="col-xxl-9 col-xl-8 col-md-7 col-sm-5 py-3">
+                <!--carrusel-->
+                <div class="container-fluid position-relative justify-content-center w-100">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="2000">
+                                <img src="../Imagenes/El1.png" class="d-block w-100 rounded" alt="fetish">
+                                <div
+                                    class="carousel-caption d-none d-md-block bg-body-tertiary opacity-75 text-dark rounded">
+                                    <h5 class="fw-bold">Él</h5>
+                                    <p class="fw-bold">Descubre tu estilo único y atractivo con nuestra selección de
+                                        ropa y moda para él, diseñada para destacar tu personalidad y resaltar tu
+                                        masculinidad en cada ocasión.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="2000">
+                                <img src="../Imagenes/ella1.jpg" class="d-block w-100 rounded" alt="lenceria">
+                                <div
+                                    class="carousel-caption d-none d-md-block bg-body-tertiary opacity-75 text-dark rounded">
+                                    <h5 class="fw-bold">Ella</h5>
+                                    <p class="fw-bold">Siéntete sensual y segura de ti misma con nuestra exclusiva
+                                        colección de ropa y moda para ella, diseñada para realzar tu belleza y destacar
+                                        tu feminidad en cualquier momento del día.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="2000">
+                                <img src="../Imagenes/Moda1.jpg" class="d-block w-100 rounded" alt="cosmeicos">
+                                <div
+                                    class="carousel-caption d-none d-md-block bg-body-tertiary opacity-75 text-dark rounded">
+                                    <h5 class="fw-bold">Él & Ella</h5>
+                                    <p class="fw-bold">Encuentra el estilo perfecto para ambos en nuestra selección de
+                                        ropa y moda para él y ella, diseñada para llevar su relación al siguiente nivel
+                                        con una moda única y elegante que los hará sentir más unidos que nunca</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="2000">
+                                <img src="../Imagenes/Lociones2.png" class="d-block w-100 rounded" alt="juguetes">
+                                <div
+                                    class="carousel-caption d-none d-md-block bg-body-tertiary opacity-75 text-dark rounded">
+                                    <h5 class="fw-bold">Lociones y fragancias</h5>
+                                    <p class="fw-bold">Despierta tus sentidos y crea una impresión duradera con nuestra
+                                        selección de lociones y fragancias, diseñadas para cautivar a quienes te rodean
+                                        con aromas irresistibles y seductores</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <!--carrusel-->
+                <div class="container my-4  d-none d-md-block bg-tertiary text-light rounded px-5">
+                    <p class="lead fw-bold">Bienvenidos a nuestra tienda de moda Él & Ella, el lugar perfecto para
+                        encontrar la
+                        ropa y los accesorios que te ayudarán a expresar tu personalidad única y destacar tu estilo. En
+                        nuestra tienda, ofrecemos una amplia variedad de prendas de alta calidad para todas las
+                        ocasiones, desde ropa casual y deportiva hasta ropa formal y elegante.</p>
 
-		<redes-sociales></redes-sociales>
+                    <p class="lead fw-bold">En nuestra tienda de moda, creemos que la moda es una forma de expresión
+                        personal y nos enorgullece ofrecer una experiencia de compra emocionante y satisfactoria para
+                        nuestros clientes. Nuestro equipo de expertos en moda está siempre disponible para ayudarte a
+                        encontrar la ropa y los accesorios que mejor se adapten a tus necesidades y gustos personales.
+                        En nuestra tienda de moda, queremos que te sientas seguro y cómodo con tu estilo, y estamos
+                        comprometidos a ofrecerte las últimas tendencias y diseños para ayudarte a lograrlo. ¡Ven y
+                        descubre tu estilo único con nosotros!</p>
+                </div>
+            </div>
+            <div class="col-1 ">
+                <div class="my-2">
+                    <button class="btn btn-dark text-success fw-bold" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasLogin" aria-controls="offcanvasLogin" id="ing">Ingresar</button>
 
-	</main>
+                    <button class="btn btn-dark text-success fw-bold" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRegister" aria-controls="offcanvasRegister"
+                        id="reg">Registrarse</button>
 
-	<footer>
-		<mifooter></mifooter>
-	</footer>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasLogin"
+                        aria-labelledby="offcanvasLoginLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasLoginLabel">Ingresar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ingreso></ingreso>
+                        </div>
+                    </div>
+
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRegister"
+                        aria-labelledby="offcanvasRegisterLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasRegisterLabel">Registrarse</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <registro></registro>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <mifooter></mifooter>
+    </footer>
 </body>
 
 </html>
