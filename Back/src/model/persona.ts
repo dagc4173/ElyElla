@@ -1,8 +1,21 @@
 export class Persona{
     constructor(){
-        this.id = 0;
-        this.nombre = "";
+        this.idPersona = 0;
+        this.TipoPersona = "";
+        this.Nombre = "";
+        this.TipoDocumento = "";
+        this.NumeroDocumento = "";
+        this.Direccion = "";
+        this.Telefono = "";
+        this.Email = "";
+
     }
-    id:number;
-    nombre:string;
+    idPersona:number;
+    TipoPersona:string;
+    Nombre:string;
+    TipoDocumento:string;
+    NumeroDocumento:string;
+    Direccion:string;
+    Telefono:string;
+    Email:string;
 }
