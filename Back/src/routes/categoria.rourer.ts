@@ -4,9 +4,13 @@ import * as controller from '../controller/categoria.controller';
 const router = express.Router();
 
 router.get('/', (_, res) =>{
-    res.json(
-        controller.getCategorias()
-    )
+    controller.GetCategoria()
+    .then((obj)=>{
+        res.json(obj);
+    })
+    .catch((err)=>{
+        res.status(500).json(err);
+    })
 });
 
 export default router;
