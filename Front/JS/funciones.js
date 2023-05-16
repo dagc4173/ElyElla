@@ -1,3 +1,4 @@
+const UrlApi="http://localhost:3000"
 $(document).ready(() => {
     $("mimenu").load("../Components/mimenu.html");
     $("menu-principal").load("./Components/menu-principal.html");
