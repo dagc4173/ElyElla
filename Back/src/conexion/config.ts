@@ -2,7 +2,7 @@ export const sqlConfig = {
 
   user: 'sa',
   password: '12345',
-  database: 'ElyElla',
+  database: 'ElyEllaBD',
   server: 'localhost',
   pool: {
     max: 10,
