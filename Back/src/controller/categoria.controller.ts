@@ -1,8 +1,8 @@
 import { Categoria } from "../model/categoria";
 import * as DaoCategoria from "../dao/categoria.dao";
-export const GetCategoria = async(): Promise<Categoria[]> => {
+export const GetCategorias = async(): Promise<Categoria[]> => {
     try{
-        let cate: Categoria[] = await DaoCategoria.ListaCategoria();
+        let cate: Categoria[] = await DaoCategoria.ListaCategorias();
         return cate;
     } catch (error) {
         throw error;

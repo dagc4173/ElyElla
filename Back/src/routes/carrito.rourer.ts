@@ -5,7 +5,7 @@ import { Carrito } from "../model/carrito";
 const router = express.Router();
 
 router.get('/', (_, res) =>{
-    controller.GetCarrito()
+    controller.GetCarritos()
     .then((obj)=>{
         res.json(obj);
     })

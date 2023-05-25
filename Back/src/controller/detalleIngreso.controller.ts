@@ -1,20 +1,18 @@
 import { DetalleIngreso } from "../model/detalleIngreso";
+import * as DaoDetalleIngreso from "../dao/detalleIngreso.dao";
+export const GetDetalleIngresos = async (): Promise<DetalleIngreso[]> => {
+    try {
+        let di: DetalleIngreso[] = await DaoDetalleIngreso.ListaDetalleIngresos();
+        return di;
+    } catch (error) {
+        throw error;
+    }
+}
 
-export const getDetallesIngreso = (): DetalleIngreso[] => {
-    let di: DetalleIngreso[] = [];
-    di.push({
-        idDetalleIngreso: 1,
-        idIngreso: 1,
-        idArticulo: 1,
-        cantidad: 10,
-        precio: 25000.00,
-    });
-    di.push({
-        idDetalleIngreso: 2,
-        idIngreso: 2,
-        idArticulo: 2,
-        cantidad: 5,
-        precio: 35000.00,
-    });
-    return di;
+export const addDetalleIngreso = async (di: DetalleIngreso): Promise<boolean> => {
+    try {
+        return DaoDetalleIngreso.CrearDetalleIngreso(di);
+    } catch (error) {
+        throw (error);
+    }
 }

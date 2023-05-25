@@ -1,8 +1,8 @@
 import { Carrito } from "../model/carrito";
 import * as DaoCarrito from "../dao/carrito.dao";
-export const GetCarrito = async(): Promise<Carrito[]> => {
+export const GetCarritos = async(): Promise<Carrito[]> => {
     try{
-        let car: Carrito[] = await DaoCarrito.ListaCarrito();
+        let car: Carrito[] = await DaoCarrito.ListaCarritos();
         return car;
     } catch (error) {
         throw error;

@@ -18,8 +18,8 @@ export const ListaPersonas = async (): Promise<Persona[]> => {
 
 export async function CrearPersona(p: Persona): Promise<boolean> {
     try {
-        let sql = `INSERT INTO Persona(Nombre, TipoPersona, NumeroDocumento, Direccion, Telefono, Email) 
-        VALUES ('${p.Nombre}', '${p.TipoPersona}', '${p.NumeroDocumento}', '${p.Direccion}', '${p.Telefono}', '${p.Email}')`
+        let sql = `INSERT INTO Persona(Nombre, TipoDocumento, NumeroDocumento, Direccion, Telefono, Email) 
+        VALUES ('${p.Nombre}', '${p.TipoDocumento}', '${p.NumeroDocumento}', '${p.Direccion}', '${p.Telefono}', '${p.Email}')`
         const pool = await GetConnection();
         let rs = await pool.query(sql);
         if (rs != undefined) {

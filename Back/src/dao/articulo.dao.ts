@@ -1,7 +1,7 @@
 import GetConnection from "../conexion/conexion";
 import { Articulo } from "../model/articulo";
 
-export const ListaArticulo = async (): Promise<Articulo[]> => {
+export const ListaArticulos = async (): Promise<Articulo[]> => {
     try {
         let sql = "Select * FROM Articulo;";
         const pool = await GetConnection();

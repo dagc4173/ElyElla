@@ -5,7 +5,7 @@ import { Categoria } from "../model/categoria";
 const router = express.Router();
 
 router.get('/', (_, res) =>{
-    controller.GetCategoria()
+    controller.GetCategorias()
     .then((obj)=>{
         res.json(obj);
     })

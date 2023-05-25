@@ -1,11 +1,11 @@
 import GetConnection from "../conexion/conexion";
-import { Carrito } from "../model/carrito";
+import { Rol } from "../model/rol";
 
-export const ListaCarritos = async (): Promise<Carrito[]> => {
+export const ListaRols = async (): Promise<Rol[]> => {
     try {
-        let sql = "Select * FROM Carrito;";
+        let sql = "Select * FROM Rol;";
         const pool = await GetConnection();
-        let rs = await pool.query<Carrito>(sql);
+        let rs = await pool.query<Rol>(sql);
 
         if (rs != undefined) {
             return rs.recordset;
@@ -16,10 +16,10 @@ export const ListaCarritos = async (): Promise<Carrito[]> => {
     }
 }
 
-export async function CrearCarrito(car: Carrito): Promise<boolean> {
+export async function CrearRol(p: Rol): Promise<boolean> {
     try {
-        let sql = `INSERT INTO Carrito(IdCliente, IdArticulo, Cantidad, Precio) 
-        VALUES ('${car.IdCliente}', '${car.IdArticulo}', '${car.Cantidad}', '${car.Precio}')`
+        let sql = `INSERT INTO Rol(Nombre, Descripcion, Estado) 
+        VALUES ('${p.Nombre}', '${p.Descripcion}', '${p.Estado}')`
         const pool = await GetConnection();
         let rs = await pool.query(sql);
         if (rs != undefined) {
@@ -30,3 +30,4 @@ export async function CrearCarrito(car: Carrito): Promise<boolean> {
         throw (error);
     }
 }
+
