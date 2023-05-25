@@ -12,9 +12,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CrearCarrito = exports.ListaCarrito = void 0;
+exports.CrearCarrito = exports.ListaCarritos = void 0;
 const conexion_1 = __importDefault(require("../conexion/conexion"));
-const ListaCarrito = () => __awaiter(void 0, void 0, void 0, function* () {
+const ListaCarritos = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         let sql = "Select * FROM Carrito;";
         const pool = yield (0, conexion_1.default)();
@@ -28,7 +28,7 @@ const ListaCarrito = () => __awaiter(void 0, void 0, void 0, function* () {
         throw error;
     }
 });
-exports.ListaCarrito = ListaCarrito;
+exports.ListaCarritos = ListaCarritos;
 function CrearCarrito(car) {
     return __awaiter(this, void 0, void 0, function* () {
         try {

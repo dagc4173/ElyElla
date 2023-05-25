@@ -3,9 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Rol = void 0;
 class Rol {
     constructor() {
-        this.idRol = 0;
+        this.Nombre = "";
         this.Descripcion = "";
-        this.nombre = "";
         this.Estado = true;
     }
 }

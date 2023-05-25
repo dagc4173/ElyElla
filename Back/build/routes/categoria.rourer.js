@@ -30,7 +30,7 @@ const express_1 = __importDefault(require("express"));
 const controller = __importStar(require("../controller/categoria.controller"));
 const router = express_1.default.Router();
 router.get('/', (_, res) => {
-    controller.GetCategoria()
+    controller.GetCategorias()
         .then((obj) => {
         res.json(obj);
     })

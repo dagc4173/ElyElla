@@ -12,11 +12,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CrearPersona = exports.ListaPersonas = void 0;
+exports.CrearVenta = exports.ListaVentas = void 0;
 const conexion_1 = __importDefault(require("../conexion/conexion"));
-const ListaPersonas = () => __awaiter(void 0, void 0, void 0, function* () {
+const ListaVentas = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        let sql = "Select * FROM Persona;";
+        let sql = "Select * FROM Venta;";
         const pool = yield (0, conexion_1.default)();
         let rs = yield pool.query(sql);
         if (rs != undefined) {
@@ -28,12 +28,12 @@ const ListaPersonas = () => __awaiter(void 0, void 0, void 0, function* () {
         throw error;
     }
 });
-exports.ListaPersonas = ListaPersonas;
-function CrearPersona(p) {
+exports.ListaVentas = ListaVentas;
+function CrearVenta(v) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            let sql = `INSERT INTO Persona(Nombre, TipoDocumento, NumeroDocumento, Direccion, Telefono, Email) 
-        VALUES ('${p.Nombre}', '${p.TipoDocumento}', '${p.NumeroDocumento}', '${p.Direccion}', '${p.Telefono}', '${p.Email}')`;
+            let sql = `INSERT INTO Venta(idCliente, idUsuario, TipoComprobante, SerieComprobante, NumeroComprobante, Fecha, Impuesto, Total, Estado) 
+        VALUES ('${v.idCliente}', '${v.idUsuario}', '${v.TipoComprobante}', '${v.SerieComprobante}', '${v.NumeroComprobante}', '${v.Fecha}', '${v.Impuesto}', '${v.Total}', '${v.Estado}')`;
             const pool = yield (0, conexion_1.default)();
             let rs = yield pool.query(sql);
             if (rs != undefined) {
@@ -46,4 +46,4 @@ function CrearPersona(p) {
         }
     });
 }
-exports.CrearPersona = CrearPersona;
+exports.CrearVenta = CrearVenta;

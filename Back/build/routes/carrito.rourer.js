@@ -30,7 +30,7 @@ const express_1 = __importDefault(require("express"));
 const controller = __importStar(require("../controller/carrito.controller"));
 const router = express_1.default.Router();
 router.get('/', (_, res) => {
-    controller.GetCarrito()
+    controller.GetCarritos()
         .then((obj) => {
         res.json(obj);
     })

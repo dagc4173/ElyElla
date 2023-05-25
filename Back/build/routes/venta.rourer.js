@@ -30,6 +30,24 @@ const express_1 = __importDefault(require("express"));
 const controller = __importStar(require("../controller/venta.controller"));
 const router = express_1.default.Router();
 router.get('/', (_, res) => {
-    res.json(controller.getVentas());
+    controller.GetVentas()
+        .then((obj) => {
+        res.json(obj);
+    })
+        .catch((err) => {
+        res.status(500).json(err);
+    });
+});
+router.post('/', (req, res) => {
+    controller.addVenta(req.body)
+        .then((f) => {
+        if (f)
+            res.status(201).send();
+        else
+            res.status(500).send();
+    })
+        .catch((e) => {
+        res.status(500).json(e);
+    });
 });
 exports.default = router;

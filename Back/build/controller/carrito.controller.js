@@ -32,18 +32,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addCarrito = exports.GetCarrito = void 0;
+exports.addCarrito = exports.GetCarritos = void 0;
 const DaoCarrito = __importStar(require("../dao/carrito.dao"));
-const GetCarrito = () => __awaiter(void 0, void 0, void 0, function* () {
+const GetCarritos = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        let car = yield DaoCarrito.ListaCarrito();
+        let car = yield DaoCarrito.ListaCarritos();
         return car;
     }
     catch (error) {
         throw error;
     }
 });
-exports.GetCarrito = GetCarrito;
+exports.GetCarritos = GetCarritos;
 const addCarrito = (car) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         return DaoCarrito.CrearCarrito(car);

@@ -12,11 +12,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CrearPersona = exports.ListaPersonas = void 0;
+exports.CrearDetalleIngreso = exports.ListaDetalleIngresos = void 0;
 const conexion_1 = __importDefault(require("../conexion/conexion"));
-const ListaPersonas = () => __awaiter(void 0, void 0, void 0, function* () {
+const ListaDetalleIngresos = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        let sql = "Select * FROM Persona;";
+        let sql = "Select * FROM DetalleIngreso;";
         const pool = yield (0, conexion_1.default)();
         let rs = yield pool.query(sql);
         if (rs != undefined) {
@@ -28,12 +28,12 @@ const ListaPersonas = () => __awaiter(void 0, void 0, void 0, function* () {
         throw error;
     }
 });
-exports.ListaPersonas = ListaPersonas;
-function CrearPersona(p) {
+exports.ListaDetalleIngresos = ListaDetalleIngresos;
+function CrearDetalleIngreso(di) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            let sql = `INSERT INTO Persona(Nombre, TipoDocumento, NumeroDocumento, Direccion, Telefono, Email) 
-        VALUES ('${p.Nombre}', '${p.TipoDocumento}', '${p.NumeroDocumento}', '${p.Direccion}', '${p.Telefono}', '${p.Email}')`;
+            let sql = `INSERT INTO DetalleIngreso(idIngreso, idArticulo, Cantidad, Precio) 
+        VALUES ('${di.idIngreso}', '${di.idArticulo}', '${di.Cantidad}', '${di.Precio}')`;
             const pool = yield (0, conexion_1.default)();
             let rs = yield pool.query(sql);
             if (rs != undefined) {
@@ -46,4 +46,4 @@ function CrearPersona(p) {
         }
     });
 }
-exports.CrearPersona = CrearPersona;
+exports.CrearDetalleIngreso = CrearDetalleIngreso;

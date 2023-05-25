@@ -12,9 +12,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CrearCategoria = exports.ListaCategoria = void 0;
+exports.CrearCategoria = exports.ListaCategorias = void 0;
 const conexion_1 = __importDefault(require("../conexion/conexion"));
-const ListaCategoria = () => __awaiter(void 0, void 0, void 0, function* () {
+const ListaCategorias = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         let sql = "Select * FROM Categoria;";
         const pool = yield (0, conexion_1.default)();
@@ -28,7 +28,7 @@ const ListaCategoria = () => __awaiter(void 0, void 0, void 0, function* () {
         throw error;
     }
 });
-exports.ListaCategoria = ListaCategoria;
+exports.ListaCategorias = ListaCategorias;
 function CrearCategoria(cate) {
     return __awaiter(this, void 0, void 0, function* () {
         try {

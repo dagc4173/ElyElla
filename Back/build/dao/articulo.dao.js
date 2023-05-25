@@ -12,9 +12,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CrearArticulo = exports.ListaArticulo = void 0;
+exports.CrearArticulo = exports.ListaArticulos = void 0;
 const conexion_1 = __importDefault(require("../conexion/conexion"));
-const ListaArticulo = () => __awaiter(void 0, void 0, void 0, function* () {
+const ListaArticulos = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         let sql = "Select * FROM Articulo;";
         const pool = yield (0, conexion_1.default)();
@@ -28,7 +28,7 @@ const ListaArticulo = () => __awaiter(void 0, void 0, void 0, function* () {
         throw error;
     }
 });
-exports.ListaArticulo = ListaArticulo;
+exports.ListaArticulos = ListaArticulos;
 function CrearArticulo(arti) {
     return __awaiter(this, void 0, void 0, function* () {
         try {

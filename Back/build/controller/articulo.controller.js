@@ -36,7 +36,7 @@ exports.addArticulo = exports.GetArticulos = void 0;
 const DaoArticulo = __importStar(require("../dao/articulo.dao"));
 const GetArticulos = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        let arti = yield DaoArticulo.ListaArticulo();
+        let arti = yield DaoArticulo.ListaArticulos();
         return arti;
     }
     catch (error) {
