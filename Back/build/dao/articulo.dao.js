@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ListaArticulo = void 0;
+exports.CrearArticulo = exports.ListaArticulo = void 0;
 const conexion_1 = __importDefault(require("../conexion/conexion"));
 const ListaArticulo = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -29,3 +29,21 @@ const ListaArticulo = () => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.ListaArticulo = ListaArticulo;
+function CrearArticulo(arti) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            let sql = `INSERT INTO Articulo(Nombre, TipoPersona, NumeroDocumento, Direccion, Telefono, Email) 
+        VALUES ('${arti.IdCategoria}', '${arti.Codigo}', '${arti.Nombre}', '${arti.PrecioCompra}', '${arti.Stock}', '${arti.Descripcion}', '${arti.Imagen}', '${arti.Estado}', '${arti.PrecioVenta}' )`;
+            const pool = yield (0, conexion_1.default)();
+            let rs = yield pool.query(sql);
+            if (rs != undefined) {
+                return rs.rowsAffected.length == 1;
+            }
+            return false;
+        }
+        catch (error) {
+            throw (error);
+        }
+    });
+}
+exports.CrearArticulo = CrearArticulo;

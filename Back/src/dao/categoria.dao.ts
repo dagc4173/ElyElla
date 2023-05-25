@@ -15,3 +15,17 @@ export const ListaCategoria = async (): Promise<Categoria[]> => {
         throw error;
     }
 }
+
+export async function CrearCategoria(cate: Categoria): Promise<boolean>{
+    try {
+        let sql = `INSERT INTO Categoria(Nombre, IdCategoriaPadre) VALUES ('${cate.Nombre}', '${cate.IdCategoriaPadre}')`
+        const pool = await GetConnection();
+        let rs = await pool.query(sql);
+        if(rs != undefined){
+            return rs.rowsAffected.length == 1;
+        }
+        return false;
+    } catch (error) {
+        throw(error);
+    }
+}

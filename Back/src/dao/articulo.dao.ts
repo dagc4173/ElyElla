@@ -15,3 +15,18 @@ export const ListaArticulo = async (): Promise<Articulo[]> => {
         throw error;
     }
 }
+
+export async function CrearArticulo(arti: Articulo): Promise<boolean> {
+    try {
+        let sql = `INSERT INTO Articulo(Nombre, TipoPersona, NumeroDocumento, Direccion, Telefono, Email) 
+        VALUES ('${arti.IdCategoria}', '${arti.Codigo}', '${arti.Nombre}', '${arti.PrecioCompra}', '${arti.Stock}', '${arti.Descripcion}', '${arti.Imagen}', '${arti.Estado}', '${arti.PrecioVenta}' )`
+        const pool = await GetConnection();
+        let rs = await pool.query(sql);
+        if (rs != undefined) {
+            return rs.rowsAffected.length == 1;
+        }
+        return false;
+    } catch (error) {
+        throw (error);
+    }
+}

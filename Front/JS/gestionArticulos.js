@@ -3,6 +3,10 @@ $(document).ready(() => {
 
 });
 
+function redondearACentena(numero) {
+    return Math.round(numero / 100) * 100;
+}
+
 // Muestra los articulos almacenados en la base de datos 
 function CargarArticulos() {
     $.get(UrlApi + "/api/articulo", (items) => {
@@ -13,7 +17,7 @@ function CargarArticulos() {
           <td>${p.Codigo}</td>
           <td>${p.Nombre}</td>
           <td>${p.Descripcion}</td>
-          <td>${p.PrecioVenta}</td>
+          <td>$${redondearACentena(p.PrecioVenta).toLocaleString()}</td>
           <td>${p.Stock}</td>
           <td><img width="100" src="/Front/Imagenes/${p.Imagen}"></td>
           <td class="d-flex justify-content-between">
@@ -54,7 +58,7 @@ function guardarProducto() {
     console.log(producto);
 
     $.post(apiUrl + "/api/articulo", producto,
-    (rs) => {
-        console.log(rs);
-     })   
+        (rs) => {
+            console.log(rs);
+        })
 }

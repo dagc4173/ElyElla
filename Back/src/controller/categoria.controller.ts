@@ -8,3 +8,11 @@ export const GetCategoria = async(): Promise<Categoria[]> => {
         throw error;
     } 
 } 
+
+export const addCategoria = async(cate: Categoria): Promise<boolean> => {
+    try {
+        return DaoCategoria.CrearCategoria(cate);
+    } catch (error) {
+        throw(error);
+    }
+    }

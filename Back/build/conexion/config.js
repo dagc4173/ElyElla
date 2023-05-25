@@ -4,7 +4,7 @@ exports.sqlConfig = void 0;
 exports.sqlConfig = {
     user: 'sa',
     password: '12345',
-    database: 'ElyEllaDB',
+    database: 'ElyEllaBD',
     server: 'localhost',
     pool: {
         max: 10,

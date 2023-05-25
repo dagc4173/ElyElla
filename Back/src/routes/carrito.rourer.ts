@@ -1,11 +1,11 @@
 import express from "express";
-import * as controller from '../controller/persona.controller';
-import { Persona } from "../model/persona";
+import * as controller from '../controller/carrito.controller';
+import { Carrito } from "../model/carrito";
 
 const router = express.Router();
 
 router.get('/', (_, res) =>{
-    controller.GetPersonas()
+    controller.GetCarrito()
     .then((obj)=>{
         res.json(obj);
     })
@@ -15,7 +15,7 @@ router.get('/', (_, res) =>{
 });
 
 router.post('/', (req, res) => {
-    controller.addPersona(req.body as Persona)
+    controller.addCarrito(req.body as Carrito)
     .then((f)=>{
         if(f)
         res.status(201).send();

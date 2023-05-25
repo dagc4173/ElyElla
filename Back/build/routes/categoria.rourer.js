@@ -38,4 +38,16 @@ router.get('/', (_, res) => {
         res.status(500).json(err);
     });
 });
+router.post('/', (req, res) => {
+    controller.addCategoria(req.body)
+        .then((f) => {
+        if (f)
+            res.status(201).send();
+        else
+            res.status(500).send();
+    })
+        .catch((e) => {
+        res.status(500).json(e);
+    });
+});
 exports.default = router;

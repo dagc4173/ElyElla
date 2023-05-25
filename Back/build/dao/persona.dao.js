@@ -32,7 +32,8 @@ exports.ListaPersonas = ListaPersonas;
 function CrearPersona(p) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            let sql = `INSERT INTO Persona(TipoPersona, Nombre) VALUES ('${p.TipoPersona}', '${p.Nombre}')`; //gregar los otros parametros
+            let sql = `INSERT INTO Persona(Nombre, TipoPersona, NumeroDocumento, Direccion, Telefono, Email) 
+        VALUES ('${p.Nombre}', '${p.TipoPersona}', '${p.NumeroDocumento}', '${p.Direccion}', '${p.Telefono}', '${p.Email}')`;
             const pool = yield (0, conexion_1.default)();
             let rs = yield pool.query(sql);
             if (rs != undefined) {

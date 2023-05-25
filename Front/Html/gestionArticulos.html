@@ -12,7 +12,7 @@
 		crossorigin="anonymous"></script>
 	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 	<script src="../JS/funciones.js" defer></script>
-	<title>El y Ella Eróticos</title>
+	<title>El y Ella Gestión de Articulos</title>
 	<link rel="icon" href="../Imagenes/Logo1.png">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 	<script defer src="../JS/gestionArticulos.js"></script>
@@ -46,15 +46,15 @@
 						<label for="stock" class="input-group-text">Stock</label>
 						<input type="number" class="form-control" id="stock" name="stock" required>
 					</div>
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<label for="categoria" class="input-group-text">Categoria</label>
-						<select class="form-control" id="categoria" name="categoria" required>
-						  <option value="">Elige una Categoria</option>
-						  <option value="opcion1">Moda</option>
-						  <option value="opcion2">Tecnología</option>
-						  <option value="opcion3">Eróticos</option>
+						<select class="form-control" id="categoria1" name="categoria1" required>
+							<option value="">Elige una Categoria</option>
+							<option value="opcion1">Moda</option>
+							<option value="opcion2">Tecnología</option>
+							<option value="opcion3">Eróticos</option>
 						</select>
-					  </div>
+					</div> -->
 				</div>
 				<div class="col-md-4 px-3">
 					<div class="mb-3">
@@ -63,19 +63,43 @@
 					</div>
 					<div class="mb-3">
 						<label for="imagen" class="input-group-text">Imagen</label>
-						<input type=
-						"file" class="form-control" id="imagen" name="imagen" required>
+						<input type="file" class="form-control" id="imagen" name="imagen" required>
 					</div>
-					<div class="form-group">
-						<label for="nombre-destino" class="input-group-text">Subcategoria</label>
-						<select class="form-control" id="nombre-destino" name="nombre-destino" required>
-						  <option value="">Elige una Subcategoria</option>
-						  <option value="opcion1">Lenceria</option>
-						  <option value="opcion2">Juguetes</option>
-						  <option value="opcion3">Cosméticos Eróticos</option>
+					<!-- <div class="form-group">
+						<label for="nombre-destino" class="input-group-text">Subcategoría</label>
+						<select class="form-control" id="subcategoria1" name="subcategoria1" required>
+							<option value="">Elige una Subcategoria</option>
+							<option value="opcion1">Lenceria</option>
+							<option value="opcion2">Juguetes</option>
+							<option value="opcion3">Cosméticos Eróticos</option>
 						</select>
-					  </div>
+					</div> -->
 				</div>
+
+				<div class="container">
+					<h1>Menús desplegables de categorías</h1>
+					<form>
+						<div class="form-group">
+							<label for="categoria">Categoría:</label>
+							<select class="form-control" id="categoria">
+								<option value="">Selecciona una categoría</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="subcategoria">Subcategoría:</label>
+							<select class="form-control" id="subcategoria">
+								<option value="">Selecciona una subcategoría</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="subsubcategoria">Subsubcategoría:</label>
+							<select class="form-control" id="subsubcategoria">
+								<option value="">Selecciona una subsubcategoría</option>
+							</select>
+						</div>
+					</form>
+				</div>
+
 				<div class="container-fluid text-center">
 					<button type="button" class="btn btn-success" onclick="guardarProducto()">Guardar</button>
 				</div>
@@ -99,7 +123,7 @@
 				</thead>
 				<tbody>
 					<!-- Aquí se mostrarán los productos desde la base de datos -->
-					
+
 				</tbody>
 			</table>
 		</div>

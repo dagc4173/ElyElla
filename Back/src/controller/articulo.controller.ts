@@ -8,3 +8,11 @@ export const GetArticulos = async(): Promise<Articulo[]> => {
         throw error;
     }
 }
+
+export const addArticulo = async(arti: Articulo): Promise<boolean> => {
+    try {
+        return DaoArticulo.CrearArticulo(arti);
+    } catch (error) {
+        throw(error);
+    }
+    }

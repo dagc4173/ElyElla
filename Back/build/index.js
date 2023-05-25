@@ -15,6 +15,7 @@ const ingreso_rourer_1 = __importDefault(require("./routes/ingreso.rourer"));
 const subcategoria_rourer_1 = __importDefault(require("./routes/subcategoria.rourer"));
 const usuario_rourer_1 = __importDefault(require("./routes/usuario.rourer"));
 const venta_rourer_1 = __importDefault(require("./routes/venta.rourer"));
+const carrito_rourer_1 = __importDefault(require("./routes/carrito.rourer"));
 const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
 const port = 3000;
@@ -31,6 +32,7 @@ app.use('/api/ingreso', ingreso_rourer_1.default);
 app.use('/api/subcategoria', subcategoria_rourer_1.default);
 app.use('/api/usuario', usuario_rourer_1.default);
 app.use('/api/venta', venta_rourer_1.default);
+app.use('/api/carrito', carrito_rourer_1.default);
 app.listen(port, () => {
     console.log(`El servidor esta escuchando el puerto ${port}`);
 });

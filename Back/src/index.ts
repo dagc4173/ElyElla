@@ -10,6 +10,7 @@ import ingresoRouter from './routes/ingreso.rourer'
 import subcategoriaRouter from './routes/subcategoria.rourer'
 import usuarioRouter from './routes/usuario.rourer'
 import ventaRouter from './routes/venta.rourer'
+import ventaCarrito from './routes/carrito.rourer'
 import cors from 'cors';
 
 const app = express();
@@ -28,7 +29,7 @@ app.use('/api/ingreso', ingresoRouter);
 app.use('/api/subcategoria', subcategoriaRouter);
 app.use('/api/usuario', usuarioRouter);
 app.use('/api/venta', ventaRouter);
-
+app.use('/api/carrito', ventaCarrito);
 app.listen(port, ()=>{
     console.log(`El servidor esta escuchando el puerto ${port}`)
 });

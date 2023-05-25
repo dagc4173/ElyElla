@@ -27,10 +27,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const controller = __importStar(require("../controller/articulo.controller"));
+const controller = __importStar(require("../controller/carrito.controller"));
 const router = express_1.default.Router();
 router.get('/', (_, res) => {
-    controller.GetArticulos()
+    controller.GetCarrito()
         .then((obj) => {
         res.json(obj);
     })
@@ -39,7 +39,7 @@ router.get('/', (_, res) => {
     });
 });
 router.post('/', (req, res) => {
-    controller.addArticulo(req.body)
+    controller.addCarrito(req.body)
         .then((f) => {
         if (f)
             res.status(201).send();

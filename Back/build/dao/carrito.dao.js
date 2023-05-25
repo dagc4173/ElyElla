@@ -12,11 +12,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CrearCategoria = exports.ListaCategoria = void 0;
+exports.CrearCarrito = exports.ListaCarrito = void 0;
 const conexion_1 = __importDefault(require("../conexion/conexion"));
-const ListaCategoria = () => __awaiter(void 0, void 0, void 0, function* () {
+const ListaCarrito = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        let sql = "Select * FROM Categoria;";
+        let sql = "Select * FROM Carrito;";
         const pool = yield (0, conexion_1.default)();
         let rs = yield pool.query(sql);
         if (rs != undefined) {
@@ -28,11 +28,12 @@ const ListaCategoria = () => __awaiter(void 0, void 0, void 0, function* () {
         throw error;
     }
 });
-exports.ListaCategoria = ListaCategoria;
-function CrearCategoria(cate) {
+exports.ListaCarrito = ListaCarrito;
+function CrearCarrito(car) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            let sql = `INSERT INTO Categoria(Nombre, IdCategoriaPadre) VALUES ('${cate.Nombre}', '${cate.IdCategoriaPadre}')`;
+            let sql = `INSERT INTO Carrito(IdCliente, IdArticulo, Cantidad, Precio) 
+        VALUES ('${car.IdCliente}', '${car.IdArticulo}', '${car.Cantidad}', '${car.Precio}')`;
             const pool = yield (0, conexion_1.default)();
             let rs = yield pool.query(sql);
             if (rs != undefined) {
@@ -45,4 +46,4 @@ function CrearCategoria(cate) {
         }
     });
 }
-exports.CrearCategoria = CrearCategoria;
+exports.CrearCarrito = CrearCarrito;

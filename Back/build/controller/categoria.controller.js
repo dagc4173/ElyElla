@@ -32,7 +32,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetCategoria = void 0;
+exports.addCategoria = exports.GetCategoria = void 0;
 const DaoCategoria = __importStar(require("../dao/categoria.dao"));
 const GetCategoria = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -44,3 +44,12 @@ const GetCategoria = () => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.GetCategoria = GetCategoria;
+const addCategoria = (cate) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        return DaoCategoria.CrearCategoria(cate);
+    }
+    catch (error) {
+        throw (error);
+    }
+});
+exports.addCategoria = addCategoria;
