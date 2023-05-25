@@ -62,3 +62,50 @@ function guardarProducto() {
             console.log(rs);
         })
 }
+
+// Definimos la URL de la API
+const apiUrl = "http://localhost:3000";
+
+// Obtenemos la lista de categorías desde la API
+$.get(apiUrl + "/api/categoria", function (data) {
+    // Agregamos las opciones al primer menú desplegable
+    $("#categoria").append("<option value=''>Selecciona una categoría</option>");
+    data.forEach(function (categoria) {
+        $("#categoria").append("<option value='" + categoria.IdCategoria + "'>" + categoria.Nombre + "</option>");
+    });
+});
+
+// Cuando se selecciona una categoría, obtenemos las subcategorías correspondientes
+$("#categoria").change(function () {
+    const idCategoria = $(this).val();
+    if (idCategoria !== "") {
+        $.get(apiUrl + "/api/categoria/" + idCategoria, function (data) {
+            // Limpiamos el segundo menú desplegable y agregamos las opciones correspondientes
+            $("#subcategoria").empty().append("<option value=''>Selecciona una subcategoría</option>");
+            data.forEach(function (subcategoria) {
+                $("#subcategoria").append("<option value='" + subcategoria.IdCategoria + "'>" + subcategoria.Nombre + "</option>");
+            });
+        });
+    } else {
+        // Si no se ha seleccionado ninguna categoría, limpiamos el segundo y tercer menú desplegable
+        $("#subcategoria").empty().append("<option value=''>Selecciona una subcategoría</option>");
+        $("#subsubcategoria").empty().append("<option value=''>Selecciona una subsubcategoría</option>");
+    }
+});
+
+// Cuando se selecciona una subcategoría, obtenemos las subsubcategorías correspondientes
+$("#subcategoria").change(function () {
+    const idSubcategoria = $(this).val();
+    if (idSubcategoria !== "") {
+        $.get(apiUrl + "/api/categoria/" + idSubcategoria, function (data) {
+            // Limpiamos el tercer menú desplegable y agregamos las opciones correspondientes
+            $("#subsubcategoria").empty().append("<option value=''>Selecciona una subsubcategoría</option>");
+            data.forEach(function (subsubcategoria) {
+                $("#subsubcategoria").append("<option value='" + subsubcategoria.IdCategoria + "'>" + subsubcategoria.Nombre + "</option>");
+            });
+        });
+    } else {
+        // Si no se ha seleccionado ninguna subcategoría, limpiamos el tercer menú desplegable
+        $("#subsubcategoria").empty().append("<option value=''>Selecciona una subsubcategoría</option>");
+    }
+});
