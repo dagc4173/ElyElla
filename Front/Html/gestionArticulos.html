@@ -29,8 +29,8 @@
 			<div class="row g-3 justify-content-center align-items-center py-3">
 				<div class="col-md-3 px-3">
 					<div class="input-group mb-3">
-						<label for="sku" class="input-group-text">SKU</label>
-						<input type="number" class="form-control" id="sku" name="sku" required>
+						<label for="codigo" class="input-group-text">Codigo</label>
+						<input type="text" class="form-control" id="codigo" name="codigo" required>
 						<button type="button" class="btn btn-outline-secondary"
 							onclick="buscarProducto()">Buscar</button>
 					</div>
@@ -46,55 +46,33 @@
 						<label for="stock" class="input-group-text">Stock</label>
 						<input type="number" class="form-control" id="stock" name="stock" required>
 					</div>
-					<!-- <div class="form-group">
-						<label for="categoria" class="input-group-text">Categoria</label>
-						<select class="form-control" id="categoria1" name="categoria1" required>
-							<option value="">Elige una Categoria</option>
-							<option value="opcion1">Moda</option>
-							<option value="opcion2">Tecnología</option>
-							<option value="opcion3">Eróticos</option>
-						</select>
-					</div> -->
+					<div class="input-group mb-3">
+						<label for="imagen" class="input-group-text">Nombre de Archivo</label>
+						<input type="text" class="form-control" id="imagen" name="imagen" required>
+					</div>
 				</div>
 				<div class="col-md-4 px-3">
-					<div class="mb-3">
+					<div class="input-group mb-3">
 						<label for="descripcion" class="input-group-text">Descripción</label>
 						<textarea class="form-control" id="descripcion" name="descripcion" required></textarea>
 					</div>
-					<div class="mb-3">
-						<label for="imagen" class="input-group-text">Imagen</label>
-						<input type="file" class="form-control" id="imagen" name="imagen" required>
-					</div>
-					<!-- <div class="form-group">
-						<label for="nombre-destino" class="input-group-text">Subcategoría</label>
-						<select class="form-control" id="subcategoria1" name="subcategoria1" required>
-							<option value="">Elige una Subcategoria</option>
-							<option value="opcion1">Lenceria</option>
-							<option value="opcion2">Juguetes</option>
-							<option value="opcion3">Cosméticos Eróticos</option>
-						</select>
-					</div> -->
-				</div>
-
-				<div class="container">
-					<h1>Menús desplegables de categorías</h1>
 					<form>
-						<div class="form-group">
-							<label for="categoria">Categoría:</label>
+						<div class="input-group form-group mb-3">
+							<label for="categoria" class="input-group-text">Tienda:</label>
 							<select class="form-control" id="categoria">
+								<option value="">Selecciona una tienda</option>
+							</select>
+						</div>
+						<div class="input-group form-group mb-3">
+							<label for="subcategoria" class="input-group-text">Categoría:</label>
+							<select class="form-control" id="subcategoria">
 								<option value="">Selecciona una categoría</option>
 							</select>
 						</div>
-						<div class="form-group">
-							<label for="subcategoria">Subcategoría:</label>
-							<select class="form-control" id="subcategoria">
-								<option value="">Selecciona una subcategoría</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label for="subsubcategoria">Subsubcategoría:</label>
+						<div class="input-group form-group mb-3">
+							<label for="subsubcategoria" class="input-group-text">Subcategoría:</label>
 							<select class="form-control" id="subsubcategoria">
-								<option value="">Selecciona una subsubcategoría</option>
+								<option value="">Selecciona una subcategoría</option>
 							</select>
 						</div>
 					</form>

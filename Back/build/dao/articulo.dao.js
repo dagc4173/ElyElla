@@ -32,8 +32,8 @@ exports.ListaArticulos = ListaArticulos;
 function CrearArticulo(arti) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            let sql = `INSERT INTO Articulo(Nombre, TipoPersona, NumeroDocumento, Direccion, Telefono, Email) 
-        VALUES ('${arti.IdCategoria}', '${arti.Codigo}', '${arti.Nombre}', '${arti.PrecioCompra}', '${arti.Stock}', '${arti.Descripcion}', '${arti.Imagen}', '${arti.Estado}', '${arti.PrecioVenta}' )`;
+            let sql = `INSERT INTO Articulo(IdCategoria, Codigo, Nombre, PrecioCompra, Stock, Descripcion, Imagen) 
+        VALUES ('${arti.IdCategoria}', '${arti.Codigo}', '${arti.Nombre}', '${arti.PrecioCompra}', '${arti.Stock}', '${arti.Descripcion}', '${arti.Imagen}')`;
             const pool = yield (0, conexion_1.default)();
             let rs = yield pool.query(sql);
             if (rs != undefined) {

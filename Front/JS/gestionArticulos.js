@@ -25,7 +25,7 @@ function CargarArticulos() {
                   <button type="button" onClick="Actualizar(${p.IdArticulo})" class="btn btn-success actualizar-btn">Actualizar</button>
               </div>
               <div class="container-fluid text-center">
-                  <button type="button" class="btn btn-danger eliminar-btn">Eliminar</button>
+                  <button type="button" onClick="Eliminar(${p.IdArticulo})"class="btn btn-danger eliminar-btn">Eliminar</button>
               </div>
           </td>
           </tr>`);
@@ -35,77 +35,178 @@ function CargarArticulos() {
 
 function guardarProducto() {
     // Obtener los valores de los campos del formulario
-    const codigo = $("#sku").val();
-    const nombre = $("#nombre").val();
-    const precio = $("#precio").val();
-    const stock = $("#stock").val();
-    const categoria = $("#categoria").val();
-    const descripcion = $("descripcion").val();
-    const imagen = $("#imagen").val();
-    const subcategoria = $("#nombre-destino").val();
+    const IdCategoria = $("#subsubcategoria").val();
+    const Codigo = $("#codigo").val();
+    const Nombre = $("#nombre").val();
+    const PrecioCompra = $("#precio").val();
+    const Stock = $("#stock").val();
+    const Descripcion = $("#descripcion").val();
+    const Imagen = $("#imagen").val();
+    
     // Crear el objeto con los datos del producto
     const producto = {
-        codigo: codigo,
-        nombre: nombre,
-        precio: precio,
-        stock: stock,
-        categoria: categoria,
-        descripcion: descripcion,
-        imagen: imagen,
-        subcategoria: subcategoria
+        IdCategoria: IdCategoria,
+        Codigo: Codigo,
+        Nombre: Nombre,
+        PrecioCompra: PrecioCompra,
+        Stock: Stock,
+        Descripcion: Descripcion,
+        Imagen: Imagen,
     };
 
     console.log(producto);
 
-    $.post(apiUrl + "/api/articulo", producto,
-        (rs) => {
-            console.log(rs);
-        })
+    $.ajax({
+        url: apiUrl + "/api/articulo",
+        type: "POST",
+        data: JSON.stringify(producto),
+        contentType: "application/json",
+        success: function(response) {
+          console.log(response);
+        },
+        error: function(error) {
+          console.error(error);
+        }
+      });
 }
+
+// // Definimos la URL de la API
+// const apiUrl = "http://localhost:3000";
+
+// // Obtenemos la lista de categorías desde la API
+// $.get(apiUrl + "/api/categoria", function(data) {
+//     // Agregamos las opciones al primer menú desplegable
+//     $.each(data, function(index, categoria) {
+//         if (categoria.IdCategoriaPadre === null) {
+//             $("#categoria").append("<option value='" + categoria.IdCategoria + "'>" + categoria.Nombre + "</option>");
+//         }
+//     });
+// });
+
+// // Cuando se seleccione una categoría, obtenemos las subcategorías correspondientes
+// $("#categoria").change(function() {
+//     // Obtenemos el ID de la categoría seleccionada
+//     const idCategoria = $(this).val();
+
+//     // Limpiamos las opciones del segundo y tercer menú desplegable
+//     $("#subcategoria").empty();
+//     $("#subsubcategoria").empty();
+
+//     // Si no se ha seleccionado ninguna categoría, no hacemos nada
+//     if (idCategoria === "") {
+//         return;
+//     }
+
+//     // Obemos las subcategorías correspondientes desde la API
+//     $.get(apiUrl + "/api/categoria?IdCategoriaPadre=" + idCategoria, function(data) {
+//         // Agregamos las opciones al segundo menú desplegable
+//         $.each(data, function(index, categoria) {
+//             $("#subcategoria").append("<option value='" + categoria.IdCategoria + "'>" + categoria.Nombre + "</option>");
+//         });
+//     });
+// });
+
+// // Cuando se seleccione una subcategoría, obtenemos las subsubcategoríasientes
+// $("#subcategoria").change(function() {
+//     // Obtenemos el ID de la subcategoría seleccionada
+//     const idSubcategoria = $(this).val();
+
+//     // Limpiamos las opciones del tercer menú desplegable
+//     $("#subsubcategoria").empty();
+
+//     // Si no se ha seleccionado ninguna subcategoría, no hacemos nada
+//     if (idSubcategoria === "") {
+//         return;
+//     }
+
+//     // Obtenemos las subsubcategorías correspondientes desde la API
+//     $.get(apiUrl + "/api/categoria?IdCategoriaPadre=" + idSubcategoria, function(data) {
+//         // Agregamos las opciones al tercer menú desplegable
+//         $.each(data, function(index, categoria) {
+//             $("#subsubcategoria").append("<option value='" + categoria.IdCategoria + "'>" + categoria.Nombre + "</option>");
+//         });
+//     });
+// });
 
 // Definimos la URL de la API
 const apiUrl = "http://localhost:3000";
 
 // Obtenemos la lista de categorías desde la API
-$.get(apiUrl + "/api/categoria", function (data) {
+$.get(apiUrl + "/api/categoria", function(data) {
     // Agregamos las opciones al primer menú desplegable
-    $("#categoria").append("<option value=''>Selecciona una categoría</option>");
-    data.forEach(function (categoria) {
-        $("#categoria").append("<option value='" + categoria.IdCategoria + "'>" + categoria.Nombre + "</option>");
+    $.each(data, function(index, categoria) {
+        if (categoria.IdCategoriaPadre === null) {
+            $("#categoria").append("<option value='" + categoria.IdCategoria + "'>" + categoria.Nombre + "</option>");
+        }
     });
 });
 
-// Cuando se selecciona una categoría, obtenemos las subcategorías correspondientes
-$("#categoria").change(function () {
+// Cuando se seleccione una categoría, obtenemos las subcategorías correspondientes
+$("#categoria").change(function() {
+    // Obtenemos el ID de la categoría seleccionada
     const idCategoria = $(this).val();
-    if (idCategoria !== "") {
-        $.get(apiUrl + "/api/categoria/" + idCategoria, function (data) {
-            // Limpiamos el segundo menú desplegable y agregamos las opciones correspondientes
-            $("#subcategoria").empty().append("<option value=''>Selecciona una subcategoría</option>");
-            data.forEach(function (subcategoria) {
-                $("#subcategoria").append("<option value='" + subcategoria.IdCategoria + "'>" + subcategoria.Nombre + "</option>");
-            });
-        });
-    } else {
-        // Si no se ha seleccionado ninguna categoría, limpiamos el segundo y tercer menú desplegable
-        $("#subcategoria").empty().append("<option value=''>Selecciona una subcategoría</option>");
-        $("#subsubcategoria").empty().append("<option value=''>Selecciona una subsubcategoría</option>");
+
+    // Limpiamos las opciones del segundo y tercer menú desplegable
+    $("#subcategoria").empty();
+    $("#subsubcategoria").empty();
+
+    // Si no se ha seleccionado ninguna categoría, no hacemos nada
+    if (idCategoria === "") {
+        return;
     }
+
+    // Obtenemos las subcategorías correspondientes desde la API
+    $.get(apiUrl + "/api/categoria?IdCategoriaPadre=" + idCategoria, function(data) {
+        // Agregamos las opciones al segundo menú desplegable
+        $.each(data, function(index, categoria) {
+            $("#subcategoria").append("<option value='" + categoria.IdCategoria + "'>" + categoria.Nombre + "</option>");
+        });
+    });
 });
 
-// Cuando se selecciona una subcategoría, obtenemos las subsubcategorías correspondientes
-$("#subcategoria").change(function () {
+// Cuando se seleccione una subcategoría, obtenemos las subsubcategorías correspondientes
+$("#subcategoria").change(function() {
+    // Obtenemos el ID de la subcategoría seleccionada
     const idSubcategoria = $(this).val();
-    if (idSubcategoria !== "") {
-        $.get(apiUrl + "/api/categoria/" + idSubcategoria, function (data) {
-            // Limpiamos el tercer menú desplegable y agregamos las opciones correspondientes
-            $("#subsubcategoria").empty().append("<option value=''>Selecciona una subsubcategoría</option>");
-            data.forEach(function (subsubcategoria) {
-                $("#subsubcategoria").append("<option value='" + subsubcategoria.IdCategoria + "'>" + subsubcategoria.Nombre + "</option>");
-            });
-        });
-    } else {
-        // Si no se ha seleccionado ninguna subcategoría, limpiamos el tercer menú desplegable
-        $("#subsubcategoria").empty().append("<option value=''>Selecciona una subsubcategoría</option>");
+
+    // Limpiamos las opciones del tercer menú desplegable
+    $("#subsubcategoria").empty();
+
+    // Si no se ha seleccionado ninguna subcategoría, no hacemos nada
+    if (idSubcategoria === "") {
+        return;
     }
+
+    // Obtenemos las subsubcategorías correspondientes desde la API
+    $.get(apiUrl + "/api/categoria?IdCategoriaPadre=" + idSubcategoria, function(data) {
+        // Agregamos las opciones al tercer menú desplegable
+        $.each(data, function(index, categoria) {
+            $("#subsubcategoria").append("<option value='" + categoria.IdCategoria + "'>" + categoria.Nombre + "</option>");
+        });
+    });
 });
+
+
+// Función para eliminar un artículo
+function Eliminar(idArticulo) {
+    const confirmacion = confirm("¿Estás seguro de que deseas eliminar este artículo?");
+  
+    if (confirmacion) {
+      // Realiza la petición DELETE a la API
+      $.ajax({
+        url: apiUrl + "/api/articulo/" + idArticulo,
+        type: "DELETE",
+        success: function(response) {
+          console.log(response);
+          // Actualiza la vista o realiza alguna acción adicional después de eliminar el artículo
+          // Por ejemplo, puedes recargar la página o actualizar la tabla de artículos
+          location.reload(); // Recargar la página
+        },
+        error: function(error) {
+          console.error(error);
+          // Maneja el error de eliminación de artículo si es necesario
+        }
+      });
+    }
+  }
+  

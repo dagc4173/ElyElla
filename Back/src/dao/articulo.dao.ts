@@ -18,8 +18,8 @@ export const ListaArticulos = async (): Promise<Articulo[]> => {
 
 export async function CrearArticulo(arti: Articulo): Promise<boolean> {
     try {
-        let sql = `INSERT INTO Articulo(Nombre, TipoPersona, NumeroDocumento, Direccion, Telefono, Email) 
-        VALUES ('${arti.IdCategoria}', '${arti.Codigo}', '${arti.Nombre}', '${arti.PrecioCompra}', '${arti.Stock}', '${arti.Descripcion}', '${arti.Imagen}', '${arti.Estado}', '${arti.PrecioVenta}' )`
+        let sql = `INSERT INTO Articulo(IdCategoria, Codigo, Nombre, PrecioCompra, Stock, Descripcion, Imagen) 
+        VALUES ('${arti.IdCategoria}', '${arti.Codigo}', '${arti.Nombre}', '${arti.PrecioCompra}', '${arti.Stock}', '${arti.Descripcion}', '${arti.Imagen}')`
         const pool = await GetConnection();
         let rs = await pool.query(sql);
         if (rs != undefined) {
