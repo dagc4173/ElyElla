@@ -70,64 +70,6 @@ function guardarProducto() {
       });
 }
 
-// // Definimos la URL de la API
-// const apiUrl = "http://localhost:3000";
-
-// // Obtenemos la lista de categorías desde la API
-// $.get(apiUrl + "/api/categoria", function(data) {
-//     // Agregamos las opciones al primer menú desplegable
-//     $.each(data, function(index, categoria) {
-//         if (categoria.IdCategoriaPadre === null) {
-//             $("#categoria").append("<option value='" + categoria.IdCategoria + "'>" + categoria.Nombre + "</option>");
-//         }
-//     });
-// });
-
-// // Cuando se seleccione una categoría, obtenemos las subcategorías correspondientes
-// $("#categoria").change(function() {
-//     // Obtenemos el ID de la categoría seleccionada
-//     const idCategoria = $(this).val();
-
-//     // Limpiamos las opciones del segundo y tercer menú desplegable
-//     $("#subcategoria").empty();
-//     $("#subsubcategoria").empty();
-
-//     // Si no se ha seleccionado ninguna categoría, no hacemos nada
-//     if (idCategoria === "") {
-//         return;
-//     }
-
-//     // Obemos las subcategorías correspondientes desde la API
-//     $.get(apiUrl + "/api/categoria?IdCategoriaPadre=" + idCategoria, function(data) {
-//         // Agregamos las opciones al segundo menú desplegable
-//         $.each(data, function(index, categoria) {
-//             $("#subcategoria").append("<option value='" + categoria.IdCategoria + "'>" + categoria.Nombre + "</option>");
-//         });
-//     });
-// });
-
-// // Cuando se seleccione una subcategoría, obtenemos las subsubcategoríasientes
-// $("#subcategoria").change(function() {
-//     // Obtenemos el ID de la subcategoría seleccionada
-//     const idSubcategoria = $(this).val();
-
-//     // Limpiamos las opciones del tercer menú desplegable
-//     $("#subsubcategoria").empty();
-
-//     // Si no se ha seleccionado ninguna subcategoría, no hacemos nada
-//     if (idSubcategoria === "") {
-//         return;
-//     }
-
-//     // Obtenemos las subsubcategorías correspondientes desde la API
-//     $.get(apiUrl + "/api/categoria?IdCategoriaPadre=" + idSubcategoria, function(data) {
-//         // Agregamos las opciones al tercer menú desplegable
-//         $.each(data, function(index, categoria) {
-//             $("#subsubcategoria").append("<option value='" + categoria.IdCategoria + "'>" + categoria.Nombre + "</option>");
-//         });
-//     });
-// });
-
 // Definimos la URL de la API
 const apiUrl = "http://localhost:3000";
 
