@@ -1,12 +1,10 @@
 export class Categoria {
     constructor() {
-        this.idCategoria = 0;
-        this.nombre = "";
-        this.descripcion = "";
-        this.estado = "";
+        this.Nombre = "";
+        this.IdCategoriaPadre = "";
+        
     }
-    idCategoria: number;
-    nombre: string;
-    descripcion: string;
-    estado: string;
+    Nombre: string;
+    IdCategoriaPadre: string;
+    
 }

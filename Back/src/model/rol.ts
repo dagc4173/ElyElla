@@ -1,14 +1,11 @@
 export class Rol{
     constructor(){
-        this.idRol = 0;
+        this.Nombre = "";
         this.Descripcion = "";
-        this.nombre = "";
         this.Estado = true;
         
-
     }
-    idRol:number;
-    nombre:string;
+    Nombre:string;
     Descripcion:string;
     Estado:boolean;
 }

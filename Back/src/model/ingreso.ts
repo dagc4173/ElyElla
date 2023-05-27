@@ -1,24 +1,22 @@
 export class Ingreso {
     constructor() {
-        this.idIngreso = 0;
-        this.idProveedor = 0;
-        this.idUsuario = 0;
-        this.tipoComprobante = "";
-        this.serieComprobante = "";
-        this.numeroComprobante = "";
-        this.fecha = new Date();
-        this.impuesto = 0;
-        this.total = 0;
-        this.estado = "";
+        this.IdProveedor = 0;
+        this.IdUsuario = 0;
+        this.TipoComprobante = "";
+        this.SerieComprobante = "";
+        this.NumeroComprobante = "";
+        this.Fecha = new Date();
+        this.Impuesto = 0;
+        this.Total = 0;
+        this.Estado = "";
     }
-    idIngreso: number;
-    idProveedor: number;
-    idUsuario: number;
-    tipoComprobante: string;
-    serieComprobante: string;
-    numeroComprobante: string;
-    fecha: Date;
-    impuesto: number;
-    total: number;
-    estado: string;
+    IdProveedor: number;
+    IdUsuario: number;
+    TipoComprobante: string;
+    SerieComprobante: string;
+    NumeroComprobante: string;
+    Fecha: Date;
+    Impuesto: number;
+    Total: number;
+    Estado: string;
 }

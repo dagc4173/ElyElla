@@ -1,3 +1,4 @@
+const UrlApi="http://localhost:3000"
 $(document).ready(() => {
     $("mimenu").load("../Components/mimenu.html");
     $("menu-principal").load("./Components/menu-principal.html");
@@ -42,6 +43,19 @@ $(document).ready(() => {
     });
 });
 
+function mostrarSubMenu(subMenuId) {
+    const subMenuIniciarSesion = document.getElementById('subMenuIniciarSesion');
+    const subMenuRegistro = document.getElementById('subMenuRegistro');
+  
+    if (subMenuId === 'subMenuIniciarSesion') {
+      subMenuIniciarSesion.style.display = 'block';
+      subMenuRegistro.style.display = 'none';
+    } else if (subMenuId === 'subMenuRegistro') {
+      subMenuIniciarSesion.style.display = 'none';
+      subMenuRegistro.style.display = 'block';
+    }
+  }
+
 function ClickBtnCargar() {
     $.get("https://dummyjson.com/products", (rs) => {
         let tbl = $("#tblProductos");
@@ -68,3 +82,4 @@ $(document).ready(function () {
         }
     );
 });
+

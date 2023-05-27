@@ -3,16 +3,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Ingreso = void 0;
 class Ingreso {
     constructor() {
-        this.idIngreso = 0;
-        this.idProveedor = 0;
-        this.idUsuario = 0;
-        this.tipoComprobante = "";
-        this.serieComprobante = "";
-        this.numeroComprobante = "";
-        this.fecha = new Date();
-        this.impuesto = 0;
-        this.total = 0;
-        this.estado = "";
+        this.IdProveedor = 0;
+        this.IdUsuario = 0;
+        this.TipoComprobante = "";
+        this.SerieComprobante = "";
+        this.NumeroComprobante = "";
+        this.Fecha = new Date();
+        this.Impuesto = 0;
+        this.Total = 0;
+        this.Estado = "";
     }
 }
 exports.Ingreso = Ingreso;
