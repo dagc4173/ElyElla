@@ -30,6 +30,24 @@ const express_1 = __importDefault(require("express"));
 const controller = __importStar(require("../controller/ingreso.controller"));
 const router = express_1.default.Router();
 router.get('/', (_, res) => {
-    res.json(controller.getIngresos());
+    controller.GetIngresos()
+        .then((obj) => {
+        res.json(obj);
+    })
+        .catch((err) => {
+        res.status(500).json(err);
+    });
+});
+router.post('/', (req, res) => {
+    controller.addIngreso(req.body)
+        .then((f) => {
+        if (f)
+            res.status(201).send();
+        else
+            res.status(500).send();
+    })
+        .catch((e) => {
+        res.status(500).json(e);
+    });
 });
 exports.default = router;

@@ -1,24 +1,22 @@
 export class Usuario {
     constructor() {
-        this.idUsuario = 0;
-        this.idRol = 0;
-        this.nombre = "";
-        this.tipoDocumento = "";
-        this.numeroDocumento = "";
-        this.direccion = "";
-        this.telefono = "";
-        this.email = "";
-        this.clave = null;
-        this.estado = false;
+        this.IdRol = 0;
+        this.Nombre = "";
+        this.TipoDocumento = "";
+        this.NumeroDocumento = "";
+        this.Direccion = "";
+        this.Telefono = "";
+        this.Email = "";
+        this.Clave = null;
+        this.Estado = false;
     }
-    idUsuario: number;
-    idRol: number;
-    nombre: string;
-    tipoDocumento: string;
-    numeroDocumento: string;
-    direccion: string;
-    telefono: string;
-    email: string;
-    clave: any;
-    estado: boolean;
+    IdRol: number;
+    Nombre: string;
+    TipoDocumento: string;
+    NumeroDocumento: string;
+    Direccion: string;
+    Telefono: string;
+    Email: string;
+    Clave: any;
+    Estado: boolean;
 }
