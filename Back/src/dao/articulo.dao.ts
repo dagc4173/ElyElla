@@ -30,3 +30,32 @@ export async function CrearArticulo(arti: Articulo): Promise<boolean> {
         throw (error);
     }
 }
+
+export async function EliminarArticulo(arti: Articulo): Promise<boolean> {
+    try {
+        let sql = `DELETE FROM Articulo WHERE IdArticulo = ${arti.IdArticulo}`;
+        const pool = await GetConnection();
+        let rs = await pool.query(sql);
+        if (rs != undefined) {
+            return rs.rowsAffected.length == 1;
+        }
+        return false;
+    } catch (error) {
+        throw (error);
+    }
+}
+
+export async function ActualizarArticulo(arti: Articulo): Promise<boolean> {
+    try {
+        let sql = `UPDATE Articulo SET IdCategoria = '${arti.IdCategoria}', Codigo = '${arti.Codigo}', Nombre = '${arti.Nombre}', PrecioCompra = '${arti.PrecioCompra}', Stock = '${arti.Stock}', Descripcion = '${arti.Descripcion}', Imagen = '${arti.Imagen}' WHERE IdArticulo = ${arti.IdArticulo}`;
+        const pool = await GetConnection();
+        let rs = await pool.query(sql);
+        if (rs != undefined) {
+            return rs.rowsAffected.length == 1;
+        }
+        return false;
+    } catch (error) {
+        throw (error);
+    }
+}
+

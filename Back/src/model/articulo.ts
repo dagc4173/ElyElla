@@ -1,5 +1,6 @@
 export class Articulo {
     constructor() {
+        this.IdArticulo =0;
         this.IdCategoria = 0;
         this.Codigo = "";
         this.Nombre = "";
@@ -10,6 +11,7 @@ export class Articulo {
         this.Estado = false;
         this.PrecioVenta = 0;
     }
+    IdArticulo: number;
     IdCategoria: number;
     Codigo: string;
     Nombre: string;
