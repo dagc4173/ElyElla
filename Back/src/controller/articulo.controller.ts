@@ -16,3 +16,20 @@ export const addArticulo = async(arti: Articulo): Promise<boolean> => {
         throw(error);
     }
     }
+
+    export const eliminarArticulo = async (arti: Articulo): Promise<boolean> => {
+        try {
+            return DaoArticulo.EliminarArticulo(arti);
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    export const actualizarArticulo = async (arti: Articulo): Promise<boolean> => {
+        try {
+            return DaoArticulo.ActualizarArticulo(arti);
+        } catch (error) {
+            throw error;
+        }
+    }
+    

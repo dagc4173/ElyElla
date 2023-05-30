@@ -27,4 +27,34 @@ router.post('/', (req, res) => {
     })
 })
 
+router.delete('/', (req, res) => {
+    controller.eliminarArticulo(req.params as Articulo)
+    .then((success) => {
+        if (success) {
+            res.status(200).send();
+        } else {
+            res.status(404).send();
+        }
+    })
+    .catch((err) => {
+        res.status(500).json(err);
+    })
+});
+
+router.put('/', (req, res) => {
+    controller.actualizarArticulo(req.body as Articulo)
+    .then((success) => {
+        if (success) {
+            res.status(200).send();
+        } else {
+            res.status(404).send();
+        }
+    })
+    .catch((err) => {
+        res.status(500).json(err);
+    })
+});
+
+
+
 export default router;
