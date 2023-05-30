@@ -27,32 +27,35 @@ router.post('/', (req, res) => {
     })
 })
 
-router.delete('/', (req, res) => {
-    controller.eliminarArticulo(req.params as Articulo)
-    .then((success) => {
-        if (success) {
-            res.status(200).send();
-        } else {
-            res.status(404).send();
-        }
-    })
-    .catch((err) => {
-        res.status(500).json(err);
-    })
+router.put('/:id', (req, res) => {
+    const articuloId: number = parseInt(req.params.id);
+    const articulo: Articulo = req.body as Articulo;
+
+    controller.updateArticulo(articulo)
+        .then((success) => {
+            if (success)
+                res.status(200).send();
+            else
+                res.status(500).send();
+        })
+        .catch((error) => {
+            res.status(500).json(error);
+        });
 });
 
-router.put('/', (req, res) => {
-    controller.actualizarArticulo(req.body as Articulo)
-    .then((success) => {
-        if (success) {
-            res.status(200).send();
-        } else {
-            res.status(404).send();
-        }
-    })
-    .catch((err) => {
-        res.status(500).json(err);
-    })
+router.delete('/:id', (req, res) => {
+    const articuloId: number = parseInt(req.params.id);
+
+    controller.deleteArticulo(articuloId)
+        .then((success) => {
+            if (success)
+                res.status(200).send();
+            else
+                res.status(500).send();
+        })
+        .catch((error) => {
+            res.status(500).json(error);
+        });
 });
 
 

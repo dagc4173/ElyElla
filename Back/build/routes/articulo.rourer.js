@@ -50,32 +50,31 @@ router.post('/', (req, res) => {
         res.status(500).json(e);
     });
 });
-router.delete('/', (req, res) => {
-    controller.eliminarArticulo(req.params)
+router.put('/:id', (req, res) => {
+    const articuloId = parseInt(req.params.id);
+    const articulo = req.body;
+    controller.updateArticulo(articulo)
         .then((success) => {
-        if (success) {
+        if (success)
             res.status(200).send();
-        }
-        else {
-            res.status(404).send();
-        }
+        else
+            res.status(500).send();
     })
-        .catch((err) => {
-        res.status(500).json(err);
+        .catch((error) => {
+        res.status(500).json(error);
     });
 });
-router.put('/', (req, res) => {
-    controller.actualizarArticulo(req.body)
+router.delete('/:id', (req, res) => {
+    const articuloId = parseInt(req.params.id);
+    controller.deleteArticulo(articuloId)
         .then((success) => {
-        if (success) {
+        if (success)
             res.status(200).send();
-        }
-        else {
-            res.status(404).send();
-        }
+        else
+            res.status(500).send();
     })
-        .catch((err) => {
-        res.status(500).json(err);
+        .catch((error) => {
+        res.status(500).json(error);
     });
 });
 exports.default = router;

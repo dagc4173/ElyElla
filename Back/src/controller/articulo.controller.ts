@@ -17,15 +17,7 @@ export const addArticulo = async(arti: Articulo): Promise<boolean> => {
     }
     }
 
-    export const eliminarArticulo = async (arti: Articulo): Promise<boolean> => {
-        try {
-            return DaoArticulo.EliminarArticulo(arti);
-        } catch (error) {
-            throw error;
-        }
-    }
-
-    export const actualizarArticulo = async (arti: Articulo): Promise<boolean> => {
+    export const updateArticulo = async(arti: Articulo): Promise<boolean> => {
         try {
             return DaoArticulo.ActualizarArticulo(arti);
         } catch (error) {
@@ -33,3 +25,10 @@ export const addArticulo = async(arti: Articulo): Promise<boolean> => {
         }
     }
     
+    export const deleteArticulo = async(artiId: number): Promise<boolean> => {
+        try {
+            return DaoArticulo.EliminarArticulo(artiId);
+        } catch (error) {
+            throw error;
+        }
+    }

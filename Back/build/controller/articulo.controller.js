@@ -32,7 +32,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.actualizarArticulo = exports.eliminarArticulo = exports.addArticulo = exports.GetArticulos = void 0;
+exports.deleteArticulo = exports.updateArticulo = exports.addArticulo = exports.GetArticulos = void 0;
 const DaoArticulo = __importStar(require("../dao/articulo.dao"));
 const GetArticulos = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -53,16 +53,7 @@ const addArticulo = (arti) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.addArticulo = addArticulo;
-const eliminarArticulo = (arti) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        return DaoArticulo.EliminarArticulo(arti);
-    }
-    catch (error) {
-        throw error;
-    }
-});
-exports.eliminarArticulo = eliminarArticulo;
-const actualizarArticulo = (arti) => __awaiter(void 0, void 0, void 0, function* () {
+const updateArticulo = (arti) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         return DaoArticulo.ActualizarArticulo(arti);
     }
@@ -70,4 +61,13 @@ const actualizarArticulo = (arti) => __awaiter(void 0, void 0, void 0, function*
         throw error;
     }
 });
-exports.actualizarArticulo = actualizarArticulo;
+exports.updateArticulo = updateArticulo;
+const deleteArticulo = (artiId) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        return DaoArticulo.EliminarArticulo(artiId);
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.deleteArticulo = deleteArticulo;
