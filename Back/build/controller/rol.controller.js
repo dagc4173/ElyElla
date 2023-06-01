@@ -32,24 +32,42 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addRol = exports.GetRols = void 0;
+exports.deleteRol = exports.updateRol = exports.addRol = exports.GetRols = void 0;
 const DaoRol = __importStar(require("../dao/rol.dao"));
 const GetRols = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        let p = yield DaoRol.ListaRols();
-        return p;
+        let r = yield DaoRol.ListaRols();
+        return r;
     }
     catch (error) {
         throw error;
     }
 });
 exports.GetRols = GetRols;
-const addRol = (p) => __awaiter(void 0, void 0, void 0, function* () {
+const addRol = (r) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        return DaoRol.CrearRol(p);
+        return DaoRol.CrearRol(r);
     }
     catch (error) {
         throw (error);
     }
 });
 exports.addRol = addRol;
+const updateRol = (r) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        return DaoRol.ActualizarRol(r);
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.updateRol = updateRol;
+const deleteRol = (rId) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        return DaoRol.EliminarRol(rId);
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.deleteRol = deleteRol;

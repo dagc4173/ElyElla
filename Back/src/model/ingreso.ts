@@ -1,5 +1,6 @@
 export class Ingreso {
     constructor() {
+        this.IdIngreso = 0;
         this.IdProveedor = 0;
         this.IdUsuario = 0;
         this.TipoComprobante = "";
@@ -10,6 +11,7 @@ export class Ingreso {
         this.Total = 0;
         this.Estado = "";
     }
+    IdIngreso: number;
     IdProveedor: number;
     IdUsuario: number;
     TipoComprobante: string;

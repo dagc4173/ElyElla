@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Ingreso = void 0;
 class Ingreso {
     constructor() {
+        this.IdIngreso = 0;
         this.IdProveedor = 0;
         this.IdUsuario = 0;
         this.TipoComprobante = "";

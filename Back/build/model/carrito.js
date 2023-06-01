@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Carrito = void 0;
 class Carrito {
     constructor() {
+        this.IdCarrito = 0;
         this.IdCliente = 0;
         this.IdArticulo = 0;
         this.Cantidad = 0;

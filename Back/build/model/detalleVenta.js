@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DetalleVenta = void 0;
 class DetalleVenta {
     constructor() {
+        this.idDetalleVenta = 0;
         this.idVenta = 0;
         this.idArticulo = 0;
         this.Cantidad = 0;

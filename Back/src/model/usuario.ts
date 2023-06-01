@@ -1,5 +1,6 @@
 export class Usuario {
     constructor() {
+        this.IdUsuario = 0;
         this.IdRol = 0;
         this.Nombre = "";
         this.TipoDocumento = "";
@@ -10,6 +11,7 @@ export class Usuario {
         this.Clave = null;
         this.Estado = false;
     }
+    IdUsuario: number;
     IdRol: number;
     Nombre: string;
     TipoDocumento: string;

@@ -27,4 +27,35 @@ router.post('/', (req, res) => {
     })
 })
 
+router.put('/:id', (req, res) => {
+    const usuarioId: number = parseInt(req.params.id);
+    const usuario: Usuario = req.body as Usuario;
+
+    controller.updateUsuario(usuario)
+        .then((success) => {
+            if (success)
+                res.status(200).send();
+            else
+                res.status(500).send();
+        })
+        .catch((error) => {
+            res.status(500).json(error);
+        });
+});
+
+router.delete('/:id', (req, res) => {
+    const usuarioId: number = parseInt(req.params.id);
+
+    controller.deleteUsuario(usuarioId)
+        .then((success) => {
+            if (success)
+                res.status(200).send();
+            else
+                res.status(500).send();
+        })
+        .catch((error) => {
+            res.status(500).json(error);
+        });
+});
+
 export default router;

@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CrearDetalleVenta = exports.ListaDetalleVentas = void 0;
+exports.EliminarDetalleVenta = exports.ActualizarDetalleVenta = exports.CrearDetalleVenta = exports.ListaDetalleVentas = void 0;
 const conexion_1 = __importDefault(require("../conexion/conexion"));
 const ListaDetalleVentas = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -47,3 +47,35 @@ function CrearDetalleVenta(dv) {
     });
 }
 exports.CrearDetalleVenta = CrearDetalleVenta;
+const ActualizarDetalleVenta = (dv) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        let sql = `UPDATE DetalleVenta SET idVenta = '${dv.idVenta}', idArticulo = '${dv.idArticulo}', Cantidad = '${dv.Cantidad}', 
+        Precio = '${dv.Precio}', Descuento = '${dv.Descuento}'
+        WHERE idDetalleVenta = '${dv.idDetalleVenta}'`;
+        const pool = yield (0, conexion_1.default)();
+        let rs = yield pool.query(sql);
+        if (rs != undefined) {
+            return rs.rowsAffected.length == 1;
+        }
+        return false;
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.ActualizarDetalleVenta = ActualizarDetalleVenta;
+const EliminarDetalleVenta = (dvId) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        let sql = `DELETE FROM DetalleVenta WHERE IdDetalleVenta = '${dvId}'`;
+        const pool = yield (0, conexion_1.default)();
+        let rs = yield pool.query(sql);
+        if (rs != undefined) {
+            return rs.rowsAffected.length == 1;
+        }
+        return false;
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.EliminarDetalleVenta = EliminarDetalleVenta;

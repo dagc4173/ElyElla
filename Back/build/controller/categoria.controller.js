@@ -32,7 +32,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addCategoria = exports.GetCategorias = void 0;
+exports.deleteCategoria = exports.updateCategoria = exports.addCategoria = exports.GetCategorias = void 0;
 const DaoCategoria = __importStar(require("../dao/categoria.dao"));
 const GetCategorias = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -53,3 +53,21 @@ const addCategoria = (cate) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.addCategoria = addCategoria;
+const updateCategoria = (cate) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        return DaoCategoria.ActualizarCategoria(cate);
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.updateCategoria = updateCategoria;
+const deleteCategoria = (cateId) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        return DaoCategoria.EliminarCategoria(cateId);
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.deleteCategoria = deleteCategoria;

@@ -50,4 +50,31 @@ router.post('/', (req, res) => {
         res.status(500).json(e);
     });
 });
+router.put('/:id', (req, res) => {
+    const rolId = parseInt(req.params.id);
+    const rol = req.body;
+    controller.updateRol(rol)
+        .then((success) => {
+        if (success)
+            res.status(200).send();
+        else
+            res.status(500).send();
+    })
+        .catch((error) => {
+        res.status(500).json(error);
+    });
+});
+router.delete('/:id', (req, res) => {
+    const rolId = parseInt(req.params.id);
+    controller.deleteRol(rolId)
+        .then((success) => {
+        if (success)
+            res.status(200).send();
+        else
+            res.status(500).send();
+    })
+        .catch((error) => {
+        res.status(500).json(error);
+    });
+});
 exports.default = router;

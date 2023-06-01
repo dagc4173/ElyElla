@@ -32,7 +32,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addDetalleVenta = exports.GetDetalleVentas = void 0;
+exports.deleteDetalleVenta = exports.updateDetalleVenta = exports.addDetalleVenta = exports.GetDetalleVentas = void 0;
 const DaoDetalleVenta = __importStar(require("../dao/detalleVenta.dao"));
 const GetDetalleVentas = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -53,3 +53,21 @@ const addDetalleVenta = (dv) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.addDetalleVenta = addDetalleVenta;
+const updateDetalleVenta = (dv) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        return DaoDetalleVenta.ActualizarDetalleVenta(dv);
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.updateDetalleVenta = updateDetalleVenta;
+const deleteDetalleVenta = (dvId) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        return DaoDetalleVenta.EliminarDetalleVenta(dvId);
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.deleteDetalleVenta = deleteDetalleVenta;

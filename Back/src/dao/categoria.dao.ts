@@ -29,3 +29,34 @@ export async function CrearCategoria(cate: Categoria): Promise<boolean>{
         throw(error);
     }
 }
+
+export const ActualizarCategoria = async (cate: Categoria): Promise<boolean> => {
+    try {
+        let sql = `UPDATE Categoria SET Nombre = '${cate.Nombre}', IdCategoriaPadre = '${cate.IdCategoriaPadre}'
+        WHERE IdCategoria = '${cate.IdCategoria}'`;
+        const pool = await GetConnection();
+        let rs = await pool.query(sql);
+
+        if (rs != undefined) {
+            return rs.rowsAffected.length == 1;
+        }
+        return false;
+    } catch (error) {
+        throw error;
+    }
+}
+
+export const EliminarCategoria = async (cateId: number): Promise<boolean> => {
+    try {
+        let sql = `DELETE FROM Categoria WHERE IdCategoria = '${cateId}'`;
+        const pool = await GetConnection();
+        let rs = await pool.query(sql);
+
+        if (rs != undefined) {
+            return rs.rowsAffected.length == 1;
+        }
+        return false;
+    } catch (error) {
+        throw error;
+    }
+}

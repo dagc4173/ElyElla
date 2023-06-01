@@ -30,3 +30,35 @@ export async function CrearDetalleVenta(dv: DetalleVenta): Promise<boolean> {
         throw (error);
     }
 }
+
+export const ActualizarDetalleVenta = async (dv: DetalleVenta): Promise<boolean> => {
+    try {
+        let sql = `UPDATE DetalleVenta SET idVenta = '${dv.idVenta}', idArticulo = '${dv.idArticulo}', Cantidad = '${dv.Cantidad}', 
+        Precio = '${dv.Precio}', Descuento = '${dv.Descuento}'
+        WHERE idDetalleVenta = '${dv.idDetalleVenta}'`;
+        const pool = await GetConnection();
+        let rs = await pool.query(sql);
+
+        if (rs != undefined) {
+            return rs.rowsAffected.length == 1;
+        }
+        return false;
+    } catch (error) {
+        throw error;
+    }
+}
+
+export const EliminarDetalleVenta = async (dvId: number): Promise<boolean> => {
+    try {
+        let sql = `DELETE FROM DetalleVenta WHERE IdDetalleVenta = '${dvId}'`;
+        const pool = await GetConnection();
+        let rs = await pool.query(sql);
+
+        if (rs != undefined) {
+            return rs.rowsAffected.length == 1;
+        }
+        return false;
+    } catch (error) {
+        throw error;
+    }
+}

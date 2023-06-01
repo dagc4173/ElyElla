@@ -32,7 +32,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addUsuario = exports.GetUsuarios = void 0;
+exports.deleteUsuario = exports.updateUsuario = exports.addUsuario = exports.GetUsuarios = void 0;
 const DaoUsuario = __importStar(require("../dao/usuario.dao"));
 const GetUsuarios = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -53,3 +53,21 @@ const addUsuario = (p) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.addUsuario = addUsuario;
+const updateUsuario = (u) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        return DaoUsuario.ActualizarUsuario(u);
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.updateUsuario = updateUsuario;
+const deleteUsuario = (uId) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        return DaoUsuario.EliminarUsuario(uId);
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.deleteUsuario = deleteUsuario;

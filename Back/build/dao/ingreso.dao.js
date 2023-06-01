@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CrearIngreso = exports.ListaIngresos = void 0;
+exports.EliminarIngreso = exports.ActualizarIngreso = exports.CrearIngreso = exports.ListaIngresos = void 0;
 const conexion_1 = __importDefault(require("../conexion/conexion"));
 const ListaIngresos = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -47,3 +47,35 @@ function CrearIngreso(i) {
     });
 }
 exports.CrearIngreso = CrearIngreso;
+const ActualizarIngreso = (i) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        let sql = `UPDATE Ingreso SET IdProveedor = '${i.IdProveedor}', IdUsuario = '${i.IdUsuario}', TipoComprobante = '${i.TipoComprobante}', 
+        SerieComprobante = '${i.SerieComprobante}', NumeroComprobante = '${i.NumeroComprobante}', Fecha = '${i.Fecha}', Impuesto = '${i.Impuesto}', Total = '${i.Total}', Estado = '${i.Estado}'
+        WHERE IdIngreso = '${i.IdIngreso}'`;
+        const pool = yield (0, conexion_1.default)();
+        let rs = yield pool.query(sql);
+        if (rs != undefined) {
+            return rs.rowsAffected.length == 1;
+        }
+        return false;
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.ActualizarIngreso = ActualizarIngreso;
+const EliminarIngreso = (iId) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        let sql = `DELETE FROM Ingreso WHERE IdIngreso = '${iId}'`;
+        const pool = yield (0, conexion_1.default)();
+        let rs = yield pool.query(sql);
+        if (rs != undefined) {
+            return rs.rowsAffected.length == 1;
+        }
+        return false;
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.EliminarIngreso = EliminarIngreso;

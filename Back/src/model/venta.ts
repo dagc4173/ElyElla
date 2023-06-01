@@ -1,5 +1,6 @@
 export class Venta {
     constructor() {
+        this.idVenta = 0;
         this.idCliente = 0;
         this.idUsuario = 0;
         this.TipoComprobante = "";
@@ -10,7 +11,7 @@ export class Venta {
         this.Total = 0;
         this.Estado = "";
     }
-
+    idVenta: number;
     idCliente: number;
     idUsuario: number;
     TipoComprobante: string;

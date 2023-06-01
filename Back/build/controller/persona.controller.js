@@ -32,7 +32,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addPersona = exports.GetPersonas = void 0;
+exports.deletePersona = exports.updatePersona = exports.addPersona = exports.GetPersonas = void 0;
 const DaoPersona = __importStar(require("../dao/persona.dao"));
 const GetPersonas = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -53,3 +53,21 @@ const addPersona = (p) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.addPersona = addPersona;
+const updatePersona = (p) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        return DaoPersona.ActualizarPersona(p);
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.updatePersona = updatePersona;
+const deletePersona = (pId) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        return DaoPersona.EliminarPersona(pId);
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.deletePersona = deletePersona;

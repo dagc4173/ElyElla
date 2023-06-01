@@ -32,7 +32,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addIngreso = exports.GetIngresos = void 0;
+exports.deleteIngreso = exports.updateIngreso = exports.addIngreso = exports.GetIngresos = void 0;
 const DaoIngreso = __importStar(require("../dao/ingreso.dao"));
 const GetIngresos = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -53,3 +53,21 @@ const addIngreso = (i) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.addIngreso = addIngreso;
+const updateIngreso = (i) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        return DaoIngreso.ActualizarIngreso(i);
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.updateIngreso = updateIngreso;
+const deleteIngreso = (iId) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        return DaoIngreso.EliminarIngreso(iId);
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.deleteIngreso = deleteIngreso;

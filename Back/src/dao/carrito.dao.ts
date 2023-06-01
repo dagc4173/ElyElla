@@ -30,3 +30,35 @@ export async function CrearCarrito(car: Carrito): Promise<boolean> {
         throw (error);
     }
 }
+
+export const ActualizarCarrito = async (car: Carrito): Promise<boolean> => {
+    try {
+        let sql = `UPDATE Articulo SET IdCarrito = '${car.IdCarrito}', IdCliente = '${car.IdCliente}', IdArticulo = '${car.IdArticulo}', Cantidad = '${car.Cantidad}', 
+        Precio = '${car.Precio}'
+        WHERE IdCarrito = '${car.IdCarrito}'`;
+        const pool = await GetConnection();
+        let rs = await pool.query(sql);
+
+        if (rs != undefined) {
+            return rs.rowsAffected.length == 1;
+        }
+        return false;
+    } catch (error) {
+        throw error;
+    }
+}
+
+export const EliminarCarrito = async (carId: number): Promise<boolean> => {
+    try {
+        let sql = `DELETE FROM Carrito WHERE IdCarrito = '${carId}'`;
+        const pool = await GetConnection();
+        let rs = await pool.query(sql);
+
+        if (rs != undefined) {
+            return rs.rowsAffected.length == 1;
+        }
+        return false;
+    } catch (error) {
+        throw error;
+    }
+}

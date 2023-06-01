@@ -50,4 +50,31 @@ router.post('/', (req, res) => {
         res.status(500).json(e);
     });
 });
+router.put('/:id', (req, res) => {
+    const detalleIngresoId = parseInt(req.params.id);
+    const detalleIngreso = req.body;
+    controller.updateDetalleIngreso(detalleIngreso)
+        .then((success) => {
+        if (success)
+            res.status(200).send();
+        else
+            res.status(500).send();
+    })
+        .catch((error) => {
+        res.status(500).json(error);
+    });
+});
+router.delete('/:id', (req, res) => {
+    const detalleIngresoId = parseInt(req.params.id);
+    controller.deleteDetalleIngreso(detalleIngresoId)
+        .then((success) => {
+        if (success)
+            res.status(200).send();
+        else
+            res.status(500).send();
+    })
+        .catch((error) => {
+        res.status(500).json(error);
+    });
+});
 exports.default = router;

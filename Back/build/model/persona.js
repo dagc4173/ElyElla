@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Persona = void 0;
 class Persona {
     constructor() {
+        this.IdPersona = 0;
         this.Nombre = "";
         this.TipoDocumento = "";
         this.NumeroDocumento = "";

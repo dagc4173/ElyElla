@@ -16,3 +16,19 @@ export const addUsuario = async (p: Usuario): Promise<boolean> => {
         throw (error);
     }
 }
+
+export const updateUsuario = async(u: Usuario): Promise<boolean> => {
+    try {
+        return DaoUsuario.ActualizarUsuario(u);
+    } catch (error) {
+        throw error;
+    }
+}
+
+export const deleteUsuario = async(uId: number): Promise<boolean> => {
+    try {
+        return DaoUsuario.EliminarUsuario(uId);
+    } catch (error) {
+        throw error;
+    }
+}

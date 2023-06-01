@@ -16,3 +16,19 @@ export const addPersona = async (p: Persona): Promise<boolean> => {
         throw (error);
     }
 }
+
+export const updatePersona = async(p: Persona): Promise<boolean> => {
+    try {
+        return DaoPersona.ActualizarPersona(p);
+    } catch (error) {
+        throw error;
+    }
+}
+
+export const deletePersona = async(pId: number): Promise<boolean> => {
+    try {
+        return DaoPersona.EliminarPersona(pId);
+    } catch (error) {
+        throw error;
+    }
+}

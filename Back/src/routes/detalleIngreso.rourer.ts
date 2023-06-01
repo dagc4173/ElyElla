@@ -27,4 +27,35 @@ router.post('/', (req, res) => {
     })
 })
 
+router.put('/:id', (req, res) => {
+    const detalleIngresoId: number = parseInt(req.params.id);
+    const detalleIngreso: DetalleIngreso = req.body as DetalleIngreso;
+
+    controller.updateDetalleIngreso(detalleIngreso)
+        .then((success) => {
+            if (success)
+                res.status(200).send();
+            else
+                res.status(500).send();
+        })
+        .catch((error) => {
+            res.status(500).json(error);
+        });
+});
+
+router.delete('/:id', (req, res) => {
+    const detalleIngresoId: number = parseInt(req.params.id);
+
+    controller.deleteDetalleIngreso(detalleIngresoId)
+        .then((success) => {
+            if (success)
+                res.status(200).send();
+            else
+                res.status(500).send();
+        })
+        .catch((error) => {
+            res.status(500).json(error);
+        });
+});
+
 export default router;

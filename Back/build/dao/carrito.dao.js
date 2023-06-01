@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CrearCarrito = exports.ListaCarritos = void 0;
+exports.EliminarCarrito = exports.ActualizarCarrito = exports.CrearCarrito = exports.ListaCarritos = void 0;
 const conexion_1 = __importDefault(require("../conexion/conexion"));
 const ListaCarritos = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -47,3 +47,35 @@ function CrearCarrito(car) {
     });
 }
 exports.CrearCarrito = CrearCarrito;
+const ActualizarCarrito = (car) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        let sql = `UPDATE Articulo SET IdCarrito = '${car.IdCarrito}', IdCliente = '${car.IdCliente}', IdArticulo = '${car.IdArticulo}', Cantidad = '${car.Cantidad}', 
+        Precio = '${car.Precio}'
+        WHERE IdCarrito = '${car.IdCarrito}'`;
+        const pool = yield (0, conexion_1.default)();
+        let rs = yield pool.query(sql);
+        if (rs != undefined) {
+            return rs.rowsAffected.length == 1;
+        }
+        return false;
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.ActualizarCarrito = ActualizarCarrito;
+const EliminarCarrito = (carId) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        let sql = `DELETE FROM Carrito WHERE IdCarrito = '${carId}'`;
+        const pool = yield (0, conexion_1.default)();
+        let rs = yield pool.query(sql);
+        if (rs != undefined) {
+            return rs.rowsAffected.length == 1;
+        }
+        return false;
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.EliminarCarrito = EliminarCarrito;

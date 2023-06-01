@@ -27,4 +27,35 @@ router.post('/', (req, res) => {
     })
 })
 
+router.put('/:id', (req, res) => {
+    const categoriaId: number = parseInt(req.params.id);
+    const categoria: Categoria = req.body as Categoria;
+
+    controller.updateCategoria(categoria)
+        .then((success) => {
+            if (success)
+                res.status(200).send();
+            else
+                res.status(500).send();
+        })
+        .catch((error) => {
+            res.status(500).json(error);
+        });
+});
+
+router.delete('/:id', (req, res) => {
+    const categoria: number = parseInt(req.params.id);
+
+    controller.deleteCategoria(categoria)
+        .then((success) => {
+            if (success)
+                res.status(200).send();
+            else
+                res.status(500).send();
+        })
+        .catch((error) => {
+            res.status(500).json(error);
+        });
+});
+
 export default router;

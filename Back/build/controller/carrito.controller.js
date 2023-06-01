@@ -32,7 +32,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addCarrito = exports.GetCarritos = void 0;
+exports.deleteCarrito = exports.updateCarrito = exports.addCarrito = exports.GetCarritos = void 0;
 const DaoCarrito = __importStar(require("../dao/carrito.dao"));
 const GetCarritos = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -53,3 +53,21 @@ const addCarrito = (car) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.addCarrito = addCarrito;
+const updateCarrito = (car) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        return DaoCarrito.ActualizarCarrito(car);
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.updateCarrito = updateCarrito;
+const deleteCarrito = (carId) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        return DaoCarrito.EliminarCarrito(carId);
+    }
+    catch (error) {
+        throw error;
+    }
+});
+exports.deleteCarrito = deleteCarrito;

@@ -1,10 +1,10 @@
 export class Categoria {
     constructor() {
+        this.IdCategoria = 0;
         this.Nombre = "";
-        this.IdCategoriaPadre = "";
-        
+        this.IdCategoriaPadre = 0;   
     }
+    IdCategoria: number;
     Nombre: string;
-    IdCategoriaPadre: string;
-    
+    IdCategoriaPadre: number;  
 }

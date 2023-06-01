@@ -31,4 +31,35 @@ export async function CrearUsuario(u: Usuario): Promise<boolean> {
     }
 }
 
+export const ActualizarUsuario = async (u: Usuario): Promise<boolean> => {
+    try {
+        let sql = `UPDATE Usuario SET IdRol = '${u.IdRol}', Nombre = '${u.Nombre}', TipoDocumento = '${u.TipoDocumento}', 
+        NumeroDocumento = '${u.NumeroDocumento}', Direccion = '${u.Direccion}', Telefono = '${u.Telefono}', Email = '${u.Email}', Clave = '${u.Clave}', Estado = '${u.Estado}'
+        WHERE IdUsuario = '${u.IdUsuario}'`;
+        const pool = await GetConnection();
+        let rs = await pool.query(sql);
+
+        if (rs != undefined) {
+            return rs.rowsAffected.length == 1;
+        }
+        return false;
+    } catch (error) {
+        throw error;
+    }
+}
+
+export const EliminarUsuario = async (uId: number): Promise<boolean> => {
+    try {
+        let sql = `DELETE FROM Usuario WHERE IdUsuario = '${uId}'`;
+        const pool = await GetConnection();
+        let rs = await pool.query(sql);
+
+        if (rs != undefined) {
+            return rs.rowsAffected.length == 1;
+        }
+        return false;
+    } catch (error) {
+        throw error;
+    }
+}
 

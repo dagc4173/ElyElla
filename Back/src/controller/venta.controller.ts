@@ -16,3 +16,19 @@ export const addVenta = async (v: Venta): Promise<boolean> => {
         throw (error);
     }
 }
+
+export const updateVenta = async(v: Venta): Promise<boolean> => {
+    try {
+        return DaoVenta.ActualizarVenta(v);
+    } catch (error) {
+        throw error;
+    }
+}
+
+export const deleteVenta = async(vId: number): Promise<boolean> => {
+    try {
+        return DaoVenta.EliminarVenta(vId);
+    } catch (error) {
+        throw error;
+    }
+}
