@@ -1,3 +1,4 @@
+<script defer src="./JS/usuario.js"></script>
 <div class="container-fluid" id="subMenuRegistro">
     <div class="row justify-content-center">
         <div class="col-md">
@@ -7,33 +8,45 @@
                     <input type="text" class="form-control" id="nombre" name="nombre" required>
                 </div>
                 <div class="mb-3">
-                    <label for="correo" class="form-label text-dark">Correo electrónico:</label>
-                    <input type="email" class="form-control" id="correo" name="correo" required>
+                    <label for="tipoDocumento" class="form-label text-dark">Tipo de documento:</label>
+                    <select class="form-control" id="tipoDocumento" name="tipoDocumento" required>
+                      <option value="">Seleccione un tipo de documento</option>
+                      <option value="CC">Cédula de Ciudadanía</option>
+                      <option value="TI">Tarjeta de Identidad</option>
+                      <option value="CE">Cédula de Extranjería</option>
+                      <option value="PA">Pasaporte</option>
+                      <!-- Agregar más opciones de tipos de documento -->
+                    </select>
+                  </div>                  
+                <div class="mb-3">
+                    <label for="numeroDocumento" class="form-label text-dark">Número de documento:</label>
+                    <input type="text" class="form-control" id="numeroDocumento" name="numeroDocumento" required>
                 </div>
                 <div class="mb-3">
-                    <label for="usuario" class="form-label text-dark">Usuario:</label>
-                    <input type="text" class="form-control" id="usuario" name="usuario" required>
+                    <label for="direccion" class="form-label text-dark">Dirección:</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion">
                 </div>
                 <div class="mb-3">
-                    <label for="contraseña" class="form-label text-dark">Contraseña:</label>
-                    <input type="password" class="form-control" id="contraseña" name="contraseña" required>
+                    <label for="telefono" class="form-label text-dark">Teléfono:</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono">
                 </div>
                 <div class="mb-3">
-                    <label for="confirmar-contraseña" class="form-label text-dark">Confirmar contraseña:</label>
-                    <input type="password" class="form-control" id="confirmar-contraseña"
-                        name="confirmar-contraseña" required>
+                    <label for="email" class="form-label text-dark">Correo electrónico:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="clave" class="form-label text-dark">Contraseña:</label>
+                    <input type="password" class="form-control" id="clave" name="clave" required>
+                </div>
+                <div class="mb-3">
+                    <label for="confirmar-clave" class="form-label text-dark">Confirmar contraseña:</label>
+                    <input type="password" class="form-control" id="confirmar-clave" name="confirmar-clave" required>
                 </div>
                 <button type="submit" class="btn btn-danger">Registrarse</button>
             </form>
-            <p class="text-dark">¿Ya tienes una cuenta? <a class="text-success" href="../Components/ingreso.html">Inicia sesión</a></p>
-
-            <ul class="nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="./ingreso.html" onclick="mostrarSubMenu('subMenuIniciarSesion')">Iniciar Sesión</a>
-                </li>
-                
-              </ul>
-
+            <p class="text-dark">¿Ya tienes una cuenta? <a class="text-success" href="../Components/ingreso.html">Inicia
+                    sesión</a></p>
         </div>
     </div>
 </div>
+
